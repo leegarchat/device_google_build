@@ -1,6 +1,6 @@
 #!/bin/bash
 # lite_make.sh — source env + lunch + сборка ОТДЕЛЬНЫХ soong-модулей (без полного ROM).
-# Синтаксис lunch как в make_n.sh: lineage_<device>-<ver>-<type> с фолбэками.
+# Синтаксис lunch как в make.sh: lineage_<device>-<ver>-<type> с фолбэками.
 #
 # Использование:
 #   lite_make.sh [-d shiba] [-t user] [-v cp2a] [-j 8] <soong-модуль> [модуль...]
