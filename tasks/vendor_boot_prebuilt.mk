@@ -20,22 +20,24 @@
 # does NOT read out/.../vendor_boot.img, it rebuilds vendor_boot from the
 # VENDOR_BOOT/ source tree inside the target-files staging dir.
 #
-# Layout (all next to this file, device/google/build/tasks/):
-#   bootsmasher-host                            — host x86_64 musl binary
-#   OrangeFox-R12.0-test6-aio.ramdisk.lz4        — recovery cpio payload
-#   vendor_boot_prebuilt.mk.bak                 — backup of the old plain-cp
-#     version (*.bak is NOT matched by the tasks wildcard *.mk,
-#     so the builder ignores it).
+# Layout:
+#   bin/bootsmasher-host     — host x86_64 musl binary
+#   prebuilts/*.lz4          — recovery cpio payload (exactly one blob)
+#   prebuilts/config.txt     — single line: the exact payload filename.
+#     Swapping the OrangeFox blob is a data-only change, this mk is untouched.
 #
 # Included via: -include $(sort $(wildcard device/*/build/tasks/*.mk))
 $(info INSTALLED_VENDOR_BOOTIMAGE_TARGET=$(INSTALLED_VENDOR_BOOTIMAGE_TARGET))
 
 ifdef INSTALLED_VENDOR_BOOTIMAGE_TARGET
 
-# Fox tools live next to this mk file (top-relative paths).
+# Fox tools live under this file's dir (top-relative paths).
+# The payload filename is read from prebuilts/config.txt (one line, exact
+# name, no wildcard), so replacing the OrangeFox blob never edits this mk.
 _FOX_DIR := device/google/build/tasks
-_FOX_BIN := $(_FOX_DIR)/bootsmasher-host
-_FOX_PAYLOAD := $(_FOX_DIR)/OrangeFox-R12.0-test8.8-aio.ramdisk.lz4
+_FOX_BIN := $(_FOX_DIR)/bin/bootsmasher-host
+_FOX_LZ4_NAME := $(strip $(shell cat $(_FOX_DIR)/prebuilts/config.txt))
+_FOX_PAYLOAD := $(_FOX_DIR)/prebuilts/$(_FOX_LZ4_NAME)
 
 # Override vendor_boot recipe: stock mkbootimg build first (same command as
 # build/make/core/Makefile "Target vendor_boot image" rule), then inject

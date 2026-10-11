@@ -19,10 +19,9 @@
 | Файл | Назначение |
 |---|---|
 | `vendor_boot_prebuilt.mk` | Активный перехват: переопределяет рецепт `$(INSTALLED_VENDOR_BOOTIMAGE_TARGET)` |
-| `vendor_boot_prebuilt.mk.bak` | Бэкап старого варианта (простой `cp` пребилта). Окончание `.bak` **не** подходит под маску `*.mk`, сборщик его игнорирует |
-| `bootsmasher-host` | Хост-биinary (Linux x86_64, musl-static, small-профиль: только `vboot` + `install`), бит `+x` уже выставлен |
-| `OrangeFox-R12.0-test6-aio.ramdisk.lz4` | Пейлоад: готовый recovery-ramdisk в `lz4-legacy`. Имя захардкожено в `_FOX_PAYLOAD` внутри `.mk` |
-| `logs.log` | Старый лог, к перехвату отношения не имеет |
+| `bin/bootsmasher-host` | Хост-биinary (Linux x86_64, musl-static, small-профиль: только `vboot` + `install`), бит `+x` уже выставлен |
+| `prebuilts/*.lz4` | Пейлоад: готовый recovery-ramdisk в `lz4-legacy` (ровно один блоб) |
+| `prebuilts/config.txt` | Одна строка — точное имя пейлоада. `.mk` читает его сам, правило `.mk` при замене блоба не трогаем |
 
 ## Цепочка сборки vendor_boot (shiba / zuma)
 
@@ -209,15 +208,16 @@ VBMETA
 
 ## Обслуживание
 
-- **Новый пейлоад**: положить `*.lz4` рядом, обновить `_FOX_PAYLOAD` в `.mk`.
+- **Новый пейлоад**: положить `*.lz4` в `prebuilts/` (старый удалить, блоб
+  должен быть ровно один), записать его точное имя в `prebuilts/config.txt`.
   Имя точное, без `wildcard` — опечатка остановит сборку на этапе kati
-  (`no rule to make target`), а не даст тихий сток.
-- **Новый бинарь**: заменить `bootsmasher-host` (`dist/bootsmasher-small-linux-x86_64`),
-  сохранить `+x`.
+  (`no rule to make target`), а не даст тихий сток. `.mk` не трогаем.
+- **Новый бинарь**: заменить `bin/bootsmasher-host`
+  (`dist/bootsmasher-small-linux-x86_64`), сохранить `+x`.
 - **Сток поменялся** (новые флаги `mkbootimg` в AOSP): сверить рецепт с
   `build/make/core/Makefile` («Target vendor_boot image»).
 - **Откат**: удалить/переименовать `.mk` (маска `*.mk` его не найдет) —
-  соберется чистый сток. `.bak` — это бэкап еще более старого `cp`-варианта.
+  соберется чистый сток.
 - Стамп `fox_vendor_boot_tf.stamp` пересоздаётся автоматически при изменении
   образа или стейджинга (зависимости make); удалять вручную не нужно.
 

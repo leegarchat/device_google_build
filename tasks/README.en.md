@@ -21,10 +21,9 @@ The `device/google/build/tasks/` directory contains TWO hooks into the
 | File | Purpose |
 |---|---|
 | `vendor_boot_prebuilt.mk` | The active hook: overrides the `$(INSTALLED_VENDOR_BOOTIMAGE_TARGET)` recipe |
-| `vendor_boot_prebuilt.mk.bak` | Backup of the old variant (plain prebuilt `cp`). The `.bak` suffix does **not** match the `*.mk` glob, so the builder ignores it |
-| `bootsmasher-host` | Host binary (Linux x86_64, musl-static, small profile: `vboot` + `install` only), `+x` bit already set |
-| `OrangeFox-R12.0-test6-aio.ramdisk.lz4` | Payload: ready-made recovery ramdisk in `lz4-legacy`. The name is hardcoded in `_FOX_PAYLOAD` inside the `.mk` |
-| `logs.log` | Old log, unrelated to the hook |
+| `bin/bootsmasher-host` | Host binary (Linux x86_64, musl-static, small profile: `vboot` + `install` only), `+x` bit already set |
+| `prebuilts/*.lz4` | Payload: ready-made recovery ramdisk in `lz4-legacy` (exactly one blob) |
+| `prebuilts/config.txt` | Single line: the exact payload filename. The `.mk` reads it itself, no `.mk` edit when swapping the blob |
 
 ## vendor_boot build chain (shiba / zuma)
 
@@ -207,16 +206,17 @@ VBMETA
 
 ## Maintenance
 
-- **New payload**: drop the `*.lz4` next to the mk, update `_FOX_PAYLOAD`.
-  The name is exact, no `wildcard` — a typo stops the build at kati stage
-  (`no rule to make target`) instead of silently producing stock.
-- **New binary**: replace `bootsmasher-host`
+- **New payload**: drop the `*.lz4` into `prebuilts/` (remove the old one, there
+  must be exactly one blob) and write its exact name into
+  `prebuilts/config.txt`. The name is exact, no `wildcard` — a typo stops
+  the build at kati stage (`no rule to make target`) instead of silently
+  producing stock. The `.mk` stays untouched.
+- **New binary**: replace `bin/bootsmasher-host`
   (`dist/bootsmasher-small-linux-x86_64`), keep `+x`.
 - **Stock changed** (new `mkbootimg` flags upstream): diff the recipe against
   `build/make/core/Makefile` ("Target vendor_boot image").
 - **Rollback**: delete/rename the `.mk` (the `*.mk` glob will miss it) — a
-  clean stock image builds. The `.bak` is a backup of the even older
-  plain-`cp` variant.
+  clean stock image builds.
 - The `fox_vendor_boot_tf.stamp` is recreated automatically when the image or
   staging changes (make dependencies); no manual cleanup needed.
 
