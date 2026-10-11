@@ -48,6 +48,8 @@ DEVICE_CODE=""
 DO_RELEASE=false
 CUSTOM_RELEASE_PATH=""
 MODIFY_JSON=false
+CLEAN_DEVICE=false
+CLEAN_OUT=false
 LS_KERNEL_FLAG=false
 CUSTOM_LS_PATH=""
 
@@ -144,6 +146,8 @@ show_help() {
     echo -e "  -l, --lunch             Принудительно перезапустить 'lunch'."
     echo -e "  -r, --release [path]    Экспортировать готовые артефакты в релизную папку."
     echo -e "  -J, --json              Сформировать и модифицировать OTA JSON при релизе."
+    echo -e "  -c, --clean-device      Удалить out/target/product/<device> перед сборкой."
+    echo -e "  -C, --clean-out         Снести out/ целиком перед сборкой."
     echo -e "  -h, --help              Показать эту справку."
 }
 
@@ -212,6 +216,8 @@ while [[ $# -gt 0 ]] && [ "$SAFE_EXIT_REQUESTED" = false ]; do
             fi
             ;;
         -J|--json) MODIFY_JSON=true; shift ;;
+        -c|--clean-device) CLEAN_DEVICE=true; shift ;;
+        -C|--clean-out) CLEAN_OUT=true; shift ;;
         -h|--help) show_help; safe_exit 0 ;;
         *)
             echo -e "${CLR_RED}❌ Неизвестный параметр: $1${CLR_RESET}"
@@ -281,21 +287,20 @@ fi
 # ============================================================
 # 6. Запуск процесса компиляции и вывода TUI
 # ============================================================
-LOG_DIR="out/build_logs"
-mkdir -p "$LOG_DIR"
-TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-LOG_FILE="$LOG_DIR/build_${DEVICE_CODE}_${TIMESTAMP}.log"
-
 TARGET_CMD="${APP_TARGET:-evolution}"
 CMD_LABEL="$TARGET_CMD ($JOBS)"
 
+if [ "$CLEAN_OUT" = true ]; then
+    echo -e "${CLR_YELLOW}⚠ Снос out/ целиком перед сборкой...${CLR_RESET}"
+    rm -rf out
+elif [ "$CLEAN_DEVICE" = true ]; then
+    echo -e "${CLR_YELLOW}⚠ Удаление out/target/product/$DEVICE_CODE перед сборкой...${CLR_RESET}"
+    rm -rf "out/target/product/$DEVICE_CODE"
+fi
+
 echo -e "${CLR_CYAN}╭──────────────────────────────────────────────────────────────────────────╮${CLR_RESET}"
 printf "${CLR_CYAN}│ ${CLR_GREEN}Запуск сборки:${CLR_RESET} ${CLR_WHITE}%-54s${CLR_RESET} ${CLR_CYAN}│${CLR_RESET}\n" "$CMD_LABEL"
-printf "${CLR_CYAN}│ ${CLR_DIM}Полный лог: %-58s${CLR_RESET} ${CLR_CYAN}│${CLR_RESET}\n" "$LOG_FILE"
 echo -e "${CLR_CYAN}╰──────────────────────────────────────────────────────────────────────────╯${CLR_RESET}"
-
-echo "=== BUILD STARTED: $(date) ===" > "$LOG_FILE"
-echo "Command: m $TARGET_CMD $JOBS" >> "$LOG_FILE"
 
 BUILD_START_TIME=$(date +%s)
 
@@ -308,10 +313,8 @@ BUILD_END_TIME=$(date +%s)
 BUILD_DURATION=$((BUILD_END_TIME - BUILD_START_TIME))
 
 echo -e "\n"
-echo "=== BUILD FINISHED: $(date), DURATION: ${BUILD_DURATION}s, EXIT CODE: $BUILD_EXIT_CODE ===" >> "$LOG_FILE"
-
 if [ $BUILD_EXIT_CODE -ne 0 ]; then
-    echo -e "${CLR_RED}❌ Сборка завершилась с ошибкой! Детальный лог:${CLR_RESET} $LOG_FILE"
+    echo -e "${CLR_RED}❌ Сборка завершилась с ошибкой! (код $BUILD_EXIT_CODE, длительность ${BUILD_DURATION}с)${CLR_RESET}"
     if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then return "$BUILD_EXIT_CODE"; else exit "$BUILD_EXIT_CODE"; fi
 fi
 
