@@ -10,108 +10,127 @@ Find it here:
 - Quick Settings tiles — long-press opens its page
 
 <details>
-<summary>📱 Main screen — what you see first</summary>
+<summary>📱 Main screen</summary>
 
-Search on top, groups below: **System**, **Misc**, **SystemUI**, **Camera**.
-Floating button: tile add, Launcher / SystemUI restart, reboot.
+Search on top. Groups: **System**, **Misc**, **SystemUI**, **Camera**.
+Floating button: add tile, restart Launcher / SystemUI, reboot.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/home/pic1.png)
 ![](../pic/PEP/home/pic2.png)
 ![](../pic/PEP/home/pic3.png)
-
-The round menu (last shot): **Show on desktop, Add app tile,
-Restart Launcher, Restart SystemUI, Reboot System, Close**.
-
 ![](../pic/PEP/home/pic4.png)
+
+</details>
 </details>
 
 ---
 
 ## Display
 
-`Pixel Extra Parts → Display → Screen`
+`Pixel Extra Parts → Display`
 
 <details>
-<summary>📂 Display hub (4 rows)</summary>
+<summary>📂 Display hub — 4 sections</summary>
 
-- Saturation — color strength
-- AutoHBM — boost in sun
-- Double Tap to Wake
-- Auto lock
+Saturation, sun boost, double tap to wake, auto lock.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/display/pic1.png)
+
+</details>
 </details>
 
 <details>
-<summary>🎨 Saturation</summary>
+<summary>🎨 Saturation — screen color strength</summary>
 
-- Preview photo with arrows, dots, **100%** label.
-- **Use custom saturation** — off in the shot. Off = normal.
-- **Saturation level — 200%** greyed out while the switch is off.
-- **+ Add Saturation tile** button.
-- Note below: system color mode can override the value.
+Makes colors pale or vivid. Applies at once, with photo preview.
+
+- **Use custom saturation** — master. Off = normal.
+- **Level — 0–200%, normal 100%.**
+- **Tile** — quick on / off from Quick Settings.
+
+If the system color mode overrides it, just re-apply.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/display/pic2.png)
+
+</details>
 </details>
 
 <details>
-<summary>☀️ Sun boost (AutoHBM)</summary>
+<summary>☀️ Sun boost — max brightness in light</summary>
 
-Top card, live numbers from the shot:
+Pushes the screen to max in bright sun, then returns yours.
+Two modes, only one at a time: **Auto** (by sensor) and **Permanent** (always max).
 
-- **Current light level — Monitoring — 14**
-- `Threshold: 4289 lx • Brightness: 1052/3827 • Tensor G3: 35.0°C`
-- **Lux check interval — 250 ms**
+- **Lock brightness** — holds max, blocks the slider.
+- **Live card** — current light, threshold progress, chip temperature.
+- **Light threshold — 100 to 60 000 lux.** Above = turn on.
+- **Turn-on / turn-off delays — 0 to 10 sec.** Ignores passing shadows.
+- **Smooth rise — on/off + duration 100 ms to 5 sec.**
+- **Sensor check — 30 ms to 10 sec.**
+- **Safety: max time 10 sec to 33 min, cooldown after it, chip limit 30–80°.**
+  Overtime or overheat switches boost off with a toast, then restores.
 
-Switches:
+Live notification with Disable + Lock buttons. Tiles: **AutoHBM**, **HBM**.
 
-- **Enable automatic HBM — ON**
-- **Permanent HBM — OFF** (max forever, ignores sensor)
-- **Lock brightness — ON**
-- **Light threshold — 4289 lx**
-- **Enable delay — 0 s**
-- **Disable delay — 1 s**
-- **Smooth rise — ON, Ramp 800 ms**
-- **Max time — 1396 s, Cooldown 60 s**
-- **Chip limit — 80°C**
-
-Overtime or overheat switches boost off with a toast, then restores.
-Notification shows lux / peak / lock with Disable + Lock buttons.
-Tiles: **AutoHBM**, **HBM**.
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/display/pic3.png)
 ![](../pic/PEP/display/pic4.png)
+
+</details>
 </details>
 
 <details>
 <summary>👆 Double tap to wake</summary>
 
-- **Enable DT2W — ON**
-- **Tap count — 2**
-- **Tap timeout — 483 ms**
-- **Coordinate check — ON**
-- **Allowed second-tap area** — preview with phone outline.
-  Text says it is only a preview, not a spot to tap.
-- **Max distance — 240 dp** (second shot: 227 dp).
+Wakes the sleeping screen by taps. Small delay is normal.
+
+- **On / off.**
+- **Taps — 1 to 3.**
+- **Max pause between taps — 100 ms to 2 sec.**
+- **Same-spot check** — second tap must land near the first.
+- **Max distance — 10 to 500 dp**, with a visual circle.
+  The circle shows the allowed distance, not a spot to tap.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/display/pic5.png)
 ![](../pic/PEP/display/pic6.png)
 ![](../pic/PEP/display/pic7.png)
+
+</details>
 </details>
 
 <details>
-<summary>🔒 Auto lock</summary>
+<summary>🔒 Auto lock when idle</summary>
 
-- **Auto lock — ON** (for videos / apps that keep screen on)
-- **Only when needed — ON**
-- **Pause media — ON**
-- **Inactivity timeout — 543 sec / 9 min 3 sec**
-- Help: time without touch before lock.
+Locks the screen when you stop touching it. Made for videos.
 
-Any touch or button resets the timer.
+- **On / off.**
+- **Only when needed** — count only while an app keeps the screen awake.
+- **Pause media** — pause video / music before locking.
+- **Timeout — 10 sec to 1 hour.** Shown as sec / min / hr.
+
+Any touch or button resets the timer. Live countdown notification.
 Tile cycles Off → On → Smart.
 
+<details>
+<summary>Screenshots</summary>
+
 ![](../pic/PEP/display/pic8.png)
+
+</details>
 </details>
 
 ---
@@ -123,101 +142,100 @@ Tile cycles Off → On → Smart.
 <details>
 <summary>📂 Icons hub</summary>
 
-Top: **Advanced** group.
+Top group **Advanced**: icon shape, Settings icons look, advanced rules.
+Then **Icon packs**, then **All applications** with system / hidden filters and search.
 
-- **Icon shape** — presets and custom shapes.
-- **Settings icon style override** — global mask.
-- **Advanced icon settings** — shape, tint, launcher rules.
-
-Then **Icon packs (1 pack)**, then **All applications (114 / 628)**.
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/appIcon/pic1.png)
 ![](../pic/PEP/appIcon/pic8.png)
+
+</details>
 </details>
 
 <details>
-<summary>🎭 Packs and app list</summary>
+<summary>🎭 Icon packs</summary>
 
-- Pack card: name, package, **Not applied**, *Supported / Icons / Applied*.
-- **Apply all, Apply partially, View set, Undo all.**
-- **Show system apps — ON, Show hidden apps — ON/OFF.**
-- Search by name or package.
-- Rows show **Icon pack not applied**.
-- With system apps on: system entries appear (e.g. 3 Button Navigation Bar).
+- **Replace icons** — everywhere + launcher. **Launcher only** — launcher alone.
+- **Per pack** — supported / icons / applied counters, status.
+- **Apply all** — whole pack, modes: all, system only, your apps only, installed only.
+- **Apply some** — checkboxes → selected only.
+- **View icons** — searchable pack grid.
+- **Update / Undo pack / Clear all** — maintenance.
+- **Per app** — restore stock, import your picture, pick from a pack,
+  own shape overrides for Settings / Notifications / Launcher with Save / Use global.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/appIcon/pic2.png)
 ![](../pic/PEP/appIcon/pic3.png)
-</details>
-
-<details>
-<summary>📱 Per-app card (Chrome)</summary>
-
-- **Current custom icon — Icon pack not applied.**
-- **Import custom icon, Choose from icon pack.**
-- **Individual shape settings** — overrides for this app only.
-- Groups: **Settings, Notifications, Pixel Launcher.**
-- Each: **Stretch to shape — OFF, Remove shape — OFF, Shape scale — 72.00%.**
-- Hint: *0% hides, 72% is fit, 200% overfills.*
-- Bottom: **Use global / Save settings.**
-- **Available icons** — per-pack rows with **Apply**.
-
 ![](../pic/PEP/appIcon/pic4.png)
 ![](../pic/PEP/appIcon/pic5.png)
 ![](../pic/PEP/appIcon/pic6.png)
-</details>
-
-<details>
-<summary>🔍 Pick from pack</summary>
-
-Dialog **Choose from icon pack → Chrome**.
-Search, **Detected alternatives**, **All pack icons**, per-row **Apply**, **Close**.
-
 ![](../pic/PEP/appIcon/pic7.png)
+
+</details>
 </details>
 
 <details>
-<summary>⚙️ Advanced icon settings</summary>
+<summary>⚙️ Shape, size, color — advanced</summary>
 
-- **Core toggles** — Enable icon system — ON, Apply in Pixel Launcher — ON.
-- **Shape and scale** — Stretch / Remove for system, notifications, launcher — all OFF in shots, scales **72.00%**.
-- **Tinting** — Background tinting **Off**, Background color `#00000000` + Pick (disabled), Icon tinting **Off**, Icon color `#FFFFFFFF` + Pick (disabled).
-- **All Apps and per-app shapes** — Workspace matches All Apps OFF, Ignore per-app shapes OFF, All Apps follows workspace OFF, Themed icons in All Apps OFF, Themed in suggestions OFF.
+For **system**, **notifications**, **launcher** separately:
+
+- **Stretch to shape** — clean cut, no white backing.
+- **Remove shape** — raw icon.
+- **Size — 0 to 200%, fit around 72%.** 0% hides, 200% overfills.
+- **Background fill** — Off / fixed color / auto color from icon.
+- **Icon tint** — Off / fixed / auto.
+- **All Apps rules** — Home = Drawer, Drawer = Home,
+  single-color icons in drawer and suggestions, ignore per-app shapes.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/appIcon/pic9.png)
 ![](../pic/PEP/appIcon/pic10.png)
 ![](../pic/PEP/appIcon/pic11.png)
 ![](../pic/PEP/appIcon/pic12.png)
+
+</details>
 </details>
 
 <details>
 <summary>🏠 Settings icons look</summary>
 
-**Use global Settings icon shape — ON.**
-Keeps Settings colors, replaces corner styles with the global mask.
+**Use global shape — on/off.** Keeps Settings colors,
+replaces corner styles with the global mask.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/appIcon/pic13.png)
+
+</details>
 </details>
 
 <details>
-<summary>✨ Custom shape builder</summary>
+<summary>✨ Own shape — builder and presets</summary>
 
-- Preview + **Shape name — PixelParts custom** + **Build**.
-- Tabs **Squircle / Polygon / Flower**.
-- **Roundness 4.50, Inset 0.00, Rotation 0.00, Width 1.00, Height 1.00, X 0.00, Y 0.00.**
-- **Import + Build imported.**
+- **Builder** — name it, pick Squircle / Polygon / Flower.
+- Roundness, sides, inset, wave, rotation, width / height, X / Y shift.
+  Live preview, on-device install. Import from SVG / vector / pasted shape.
+- **Presets** — Default (active system one), installed overlays,
+  built-in set: iOS, rounded, squircle, square, hexagon, teardrop and more.
+
+Restart Launcher / SystemUI after applying so caches refresh.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/appIcon/pic14.png)
-</details>
-
-<details>
-<summary>📦 Shape presets</summary>
-
-- **Default — System default — Active.**
-- Installed overlays: **Arch, Leaf, Meow…** with **Apply**.
-- Built-in presets with **Build**: Rounded rectangle, Squircle, Square, Hexagon, Teardrop, Tapered rectangle, Pebble…
-
 ![](../pic/PEP/appIcon/pic15.png)
 ![](../pic/PEP/appIcon/pic16.png)
+
+</details>
 </details>
 
 ---
@@ -227,216 +245,220 @@ Keeps Settings colors, replaces corner styles with the global mask.
 `Pixel Extra Parts → SystemUI Settings`
 
 <details>
-<summary>📂 System hub + logs</summary>
+<summary>📂 System hub + one-tap logs</summary>
 
-- **Module Settings** — Lock screen, Shade and QS, Notification icons.
-- **Background Logging** — **Log in background — Start, Process is stopped.**
-- **Log logcat — ON, Log dmesg — ON, Catch app crashes — OFF.**
-- Logs go to `/sdcard/PixelExtraPartsLogs/Date`.
-- Then: **Text Magnifier, Activity Transitions, Rotation Animation.**
+- **Module pages** — Lock screen, Shade and QS, Notification icons.
+- **Background logging** — Start / Stop + live status.
+  System log, kernel log, crash log separately.
+  Files go to `PixelExtraPartsLogs/<date>/`. Attach the folder to bug reports.
+- Then: Text Magnifier, Activity Transitions, Rotation Animation.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/SystemUI/pic1.png)
 ![](../pic/PEP/SystemUI/pic2.png)
+
+</details>
 </details>
 
 <details>
-<summary>⚡ Charging on lockscreen</summary>
+<summary>⚡ Charging numbers on lockscreen</summary>
 
-Screen **Lock screen → Charging info**.
+Live measurements under the clock.
 
-- **Show charging data — ON.**
-- **Refresh interval — 1000 ms.**
-- **Average readings — OFF.**
-- **Standard string — ON, Custom symbol — ON, Symbol — ⚡.**
-- **Power — ON, Voltage — ON, Current — ON, Temperature — ON, Percent — OFF.**
-- **Quick Settings tiles — Charging info tile — Bind tile.**
+- **Show data** — master (same as the tile).
+- **Power / Voltage / Current / Temperature / Percent** — each separately.
+- **Keep stock text** — Fast / Slow next to numbers.
+- **Own symbol** — editable, e.g. ⚡.
+- **Refresh — 100 ms to 5 sec. Smoothing** averages jumps.
+- **Tile** binds the same switch.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/SystemUI/pic3.png)
 ![](../pic/PEP/SystemUI/pic4.png)
+
+</details>
 </details>
 
 <details>
-<summary>🔆 Shade and player</summary>
+<summary>🔆 Shade, player, calendar</summary>
 
-Screen **Shade and QS**.
+- **Shade master — on/off.** Off = stock look back at once.
+- **Date opens Calendar** instead of Clock.
+- **Player size — Off / Compact / In header / Mini.**
+- **Player transparency — 0 to 1.**
+- **Hide player** in Quick Settings / notifications / lockscreen — separately.
 
-- **Shade tweaks — ON** (off = stock look back).
-- **QS header — Date opens Calendar — ON.**
-- **QS media player** — Background opacity **1.00**, Compact mode **Mini**.
-- **Hide in QS — OFF, Hide in notifications — OFF, Hide on lock screen — OFF.**
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/SystemUI/pic5.png)
 ![](../pic/PEP/SystemUI/pic6.png)
+
+</details>
 </details>
 
 <details>
-<summary>🌫 Shade surface and dim</summary>
+<summary>🌫 Shade background and dim</summary>
 
-- **Shade surface** — live, no restart.
-- **Blur intensity — 100%.**
-- **Zoom intensity — −689%.**
-- **Enable zoom — OFF** (off = sharp surface).
-- **Zoom gravity — 0** (0 = direct tracking).
-- **Scrim** — Notification **−1%**, Main **−1%** (−1 = system value).
-- **Tint notification / main — OFF**, colors **0** + Pick (disabled).
+Live, no restart.
+
+- **Blur — 0 to 400%.** 100% = normal.
+- **Zoom — −1000 to +1000%.** 0 = normal. Works even with blur at 0.
+- **Zoom on/off, follow speed 0 to 1000** (0 = direct).
+- **Dim of notifications zone / main zone — auto (−1) to 100%.**
+- **Dim tint** — switch + color (skipped on lockscreen / AOD).
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/SystemUI/pic6.png)
 ![](../pic/PEP/SystemUI/pic7.png)
+
+</details>
 </details>
 
 <details>
-<summary>🔔 Status bar and always-on icons</summary>
+<summary>🔔 App icons in bar and always-on</summary>
 
-Screen **Notification icons**.
+- **Status bar: real icons + optional single-color.**
+- **Always-on: real icons + single-color + full-color mode.**
 
-- **Status bar — Use app icons — ON, Monochrome — OFF.**
-- **AOD — Use app icons — ON, Monochrome — ON, Legacy full color — OFF.**
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/SystemUI/pic8.png)
+
+</details>
 </details>
 
 <details>
 <summary>🔍 Text loupe</summary>
 
-Screen **Text Magnifier**.
+- **Custom zoom — on/off.**
+- **Zoom 0.5–4×, window size 0.5–3×.**
+- **Shape — normal / square / circle.**
+- **Vertical shift — −200 to +200 dp.**
+- Sample text + Preview.
 
-- **Custom zoom — OFF** (so the rest is greyed out).
-- **Zoom 1.25x, Window 1.00x.**
-- **Window shape — Default** (Square, Circle below).
-- **Vertical offset — 0dp.**
-- Sample text field + **Preview**.
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/SystemUI/pic9.png)
+
+</details>
 </details>
 
 <details>
 <summary>🎬 Open / close animations</summary>
 
-Screen **Activity Transitions**.
+- Status card: current open / close + **Off** reset.
+- **No animation** mode with Apply Both / Open / Close.
+- **Ready styles** — Slide, Card Stack, Train, iOS, Fade, Zoom, Modal, Depth, Pivot, each in 4 directions. Each with previews and the same three buttons.
+- **Your themes** — apply / delete.
+- **Create theme** — name + enter / exit files (or pasted code) → Build & install on the phone.
+- **Constructor** — move, scale, transparency, rotation, pivot, timing, smoothness, live preview, Build / Show code.
+- **No back-gesture animation** switch. Tile toggles animations.
 
-- **Disable Predictive Back — ON.**
-- Status: **Current open: Depth — Bottom / Current close: Depth — Bottom**, pill **Disabled**.
-- **Built-in Animations — No Animation** with Apply Both / Open / Close.
-- Collapsed rows: Slide Right / Left / Top / Bottom…
-- Expanded **Slide — Right**: phone previews Open / Close, same three buttons.
-- **Installed Themes — No animation themes installed.**
-- **Create Animation Theme** — Style name, **File / XML Text** tabs,
-  Open Enter / Open Exit / Close Enter / Close Exit file rows,
-  **Compile & Install** (greyed out until files picked).
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/SystemUI/pic10.png)
 ![](../pic/PEP/SystemUI/pic11.png)
 ![](../pic/PEP/SystemUI/pic12.png)
-</details>
-
-<details>
-<summary>🧱 Animation constructor</summary>
-
-Tabs **Open Enter / Open Exit / Close Enter / Close…**.
-
-- **Translate** fromX / toX / fromY / toY.
-- **Scale** fromX / toX / fromY / toY (1.00 in shot).
-- **Alpha** from / to (1.00).
-- **Rotate**, **Timing duration 350 ms / offset 0 ms**, **Interpolator Linear**.
-- **Preview** with two phone mocks.
-- **Build Theme, Show XML.**
-
 ![](../pic/PEP/SystemUI/pic13.png)
 ![](../pic/PEP/SystemUI/pic14.png)
+
+</details>
 </details>
 
 <details>
-<summary>🔄 Rotation styles</summary>
+<summary>🔄 Rotation animation</summary>
 
-Screen **Rotation Animation**.
+Same idea for screen rotation.
 
-- Status: **Current: Windows 10/11**, **Reset to default**.
-- **Built-in Styles** — Windows Phone, **Windows 10/11 — Active**,
-  Cube, Zoom, Slide, Flip, Fade (+ Bounce below).
-- Expanded style shows preview + **Active** button.
-- **Custom Themes — No custom themes installed.**
-- **Import Theme** — Style name, Exit / Enter files (**No file selected**),
-  **Build & Install** (greyed out).
+- Status + Reset to default.
+- Ready styles: Windows Phone, Windows 10/11, Cube, Zoom, Slide, Flip, Fade, Bounce — preview + Apply.
+- Your themes — Apply / Delete.
+- Import — name + exit / enter files → Build & install.
+- Constructor — Exit / Enter tabs, same editors, phone-shaped preview.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/SystemUI/pic15.png)
 ![](../pic/PEP/SystemUI/pic16.png)
 ![](../pic/PEP/SystemUI/pic17.png)
-</details>
-
-<details>
-<summary>🧱 Rotation constructor</summary>
-
-Tabs **Exit / Enter**.
-
-- **Translate** fromX / toX / fromY / toY (0 in shot).
-- **Scale** 1.00 everywhere.
-- **Alpha from 1.00 to 0.00.**
-- **Rotate from 0° to −90°.**
-- **Pivot X 50 / Y 50.**
-- **Timing duration 320 ms / offset 0 ms, Interpolator Linear.**
-- **Rotation preview** phone mock.
-- **Build Rotation Theme, Show XML.**
-
 ![](../pic/PEP/SystemUI/pic18.png)
 ![](../pic/PEP/SystemUI/pic19.png)
 ![](../pic/PEP/SystemUI/pic20.png)
+
+</details>
 </details>
 
 <details>
-<summary>🌙 Night screen (Ambient Extend)</summary>
+<summary>🌙 Night screen</summary>
 
-Screen **Ambient Extend**.
+- **Blackout** — full black after quiet time. Delay 1 sec to 10 min, fade up to 10 sec.
+- **Pixel mask** — fewer lit pixels (10–100%) + shifting pattern against burn-in.
+- **Sleep dimming** — extra darkness strength.
 
-- **AOD blackout — ON, Delay 60 s, Fade 1200 ms.**
-  Turns always-on off after quiet time.
-- **Smart Pixels — ON, Disabled pixels 72%, Mask shifting ON.**
-  Fewer lit pixels, pattern moves against burn-in.
-- **Doze dimming — OFF, strength 26%.**
-  Extra darkness layer in sleep mode.
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/AmbientAOD/pic1.png)
 ![](../pic/PEP/AmbientAOD/pic2.png)
+
+</details>
 </details>
 
 <details>
 <summary>📷 Camera flash</summary>
 
-Screen **GCam Photo Torch → Photo flash controls**.
+Extra always-on flashlight item in the Google Camera photo flash menu. On / off.
 
-- **Enable Torch — ON.**
-  Shows the Torch option in Google Camera photo flash menu.
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/Gcam/pic1.png)
+
+</details>
 </details>
 
 <details>
-<summary>📶 SIM / network (IMS Carrier Config)</summary>
+<summary>📶 SIM and network</summary>
 
-Screen **IMS Carrier Config**.
-
-- Banner **System API path**.
-- **Voice stack preset — ON** (VoLTE + Wi-Fi calling + video + UT together).
+- **One-switch preset** — VoLTE + Wi-Fi calling + video + extras together.
 - **Clear carrier override** button.
-- **Voice services** — VoLTE, Wi-Fi calling, Video calling, Cross-SIM, UT — all ON in shots.
-- **Network services** — VoNR, 5G NR availability, 5G thresholds — ON.
+- **Voice services** — VoLTE, Wi-Fi calling, video, cross-SIM, extras — each separately.
+- **Network** — VoNR, 5G availability, 5G thresholds — active subscriptions only.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/IMS/pic1.png)
 ![](../pic/PEP/IMS/pic2.png)
+
+</details>
 </details>
 
 <details>
-<summary>⚙️ Settings entry look</summary>
+<summary>⚙️ Settings row look</summary>
 
-Screen **Settings Homepage Item**.
+- **Show in Settings — on/off.**
+- **Position** — lower number = higher in the list.
+- **Colored icon — on/off. Background / glyph colors** — Auto or custom hex.
 
-- **Visibility and order** — Show Pixel Extra Parts — ON.
-- **Settings position — −139** (lower = higher in the list).
-- **Icon style** — Colored icon — OFF.
-- **Icon background — Auto**, Custom background `#67DDF7` + Pick (disabled).
-- **Glyph color — Auto**, Custom glyph `#0B3D4F` + Pick (disabled).
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/SettingsHome/pic1.png)
 ![](../pic/PEP/SettingsHome/pic2.png)
+
+</details>
 </details>
 
 ---
@@ -446,150 +468,127 @@ Screen **Settings Homepage Item**.
 <details>
 <summary>📂 Launcher hub</summary>
 
-Screen **Pixel Launcher Settings → System**.
+Home screen, Dock and search, App drawer, Gesture bar, Recents, Quick Settings tiles.
 
-- Home screen
-- Dock and search
-- App drawer
-- Gesture bar
-- Recents
-- Quick Settings tiles
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/PixelLauncher/pic1.png)
+
+</details>
 </details>
 
 <details>
 <summary>🏠 Home grid + sleep tap</summary>
 
-Screen **Home screen**.
+- **Custom grid — on/off. Columns 3–10, rows 4–12.**
+- **Icon size 50–160%.** 100% = stock.
+- **Labels — normal / 2 lines / running line / hidden.**
+- **Double tap empty space = sleep.** Only Pixel Launcher, not on widgets.
+- **Tap window 100–800 ms.**
 
-- **Home grid** — Modify switch **OFF** in shot.
-- **Columns 5, Rows 6, Icon size 100%, Labels Default.**
-- **Sleep gesture** — Double tap to sleep **OFF**,
-  Double-tap window **250 ms**.
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/PixelLauncher/pic2.png)
 ![](../pic/PEP/PixelLauncher/pic3.png)
+
+</details>
 </details>
 
 <details>
 <summary>🔎 Dock and search</summary>
 
-Screen **Dock and search**.
+- **Custom dock — on/off.**
+- **Fast local search** — apps and contacts without Google App redirect.
+- **Icons in dock 0–10** (0 = default), dock icon size.
+- **Hide dock, hide search.**
+- **Offsets** — home bottom, dock, search, page dots X / Y.
 
-- **Modify dock and search — OFF.**
-- **Use native search — ON** (only the search field is redirected).
-- **Dock icons 0** (0 = launcher default), **Dock icon size 100%.**
-- **Hide dock — OFF, Hide search — OFF.**
-- **Offsets** — Home bottom **−45 dp**, Dock **0**, Search **0**,
-  Dots vertical **0**, Dots horizontal **0**.
+Also: **No Google Feed** (−1 screen), **no top widget** (frees the slot).
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/PixelLauncher/pic4.png)
 ![](../pic/PEP/PixelLauncher/pic5.png)
+
+</details>
 </details>
 
 <details>
 <summary>🗂 Drawer</summary>
 
-Screen **App drawer**.
+- **Custom drawer — on/off. Columns 3–10.**
+- **Row height, icon size, label mode.**
+- **Suggestions row** — hide, icon size, label mode.
+- **Search results** — icon size, label mode.
 
-- **Modify app drawer — OFF.**
-- **Columns 5, Row height 100%, Icon size 100%, Labels Default.**
-- **Suggestions** — Hide row OFF, Suggestion icon 100%, Suggestion labels Default.
-- **Search results** — Search icon 100%, Search labels Default.
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/PixelLauncher/pic6.png)
 ![](../pic/PEP/PixelLauncher/pic7.png)
+
+</details>
 </details>
 
 <details>
-<summary>➖ Bottom bar geometry</summary>
+<summary>➖ Bottom bar</summary>
 
-Screen **Gesture bar → Handle geometry**.
+- **Tuning — on/off. Width 8–100%, height 1–16 dp, X / Y shift.**
+- **Bottom gaps** — reserved area and swipe strip, 0–96 dp each.
+- **Auto-hide** at home / in apps / on lockscreen + delays up to 10 sec.
+- **Let apps use the bottom** — swipe still works.
+- **Transparency 0–100%, fade 20 ms–1.5 sec, custom color.**
 
-- **Enable tuning — ON.**
-- **Width 28%, Height 4 dp, X 0, Y 0.**
-- **Reserved area 24 dp, System gesture area 24 dp.**
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/PixelLauncher/pic8.png)
 ![](../pic/PEP/PixelLauncher/pic9.png)
-</details>
-
-<details>
-<summary>👻 Bottom bar hiding + look</summary>
-
-- **Auto-hide** — Hide on launcher **ON** (delay 3000 ms),
-  Hide in apps **ON** (delay 3000 ms),
-  Hide on lock screen **ON**, Remove reserved area **OFF**.
-- **Appearance** — Opacity **58%**, Fade-in **220 ms**, Fade-out **220 ms**,
-  Set color **OFF**, Bar color **#FFFFFF** + Pick.
-
 ![](../pic/PEP/PixelLauncher/pic10.png)
 ![](../pic/PEP/PixelLauncher/pic11.png)
+
+</details>
 </details>
 
 <details>
-<summary>📑 Recent apps hub</summary>
+<summary>📑 Recent apps</summary>
 
-Screen **Recents → System**.
+- **Carousel** — spacing (−200 to +200), edge scale (0.5–1.5),
+  edge transparency (0.1–1), card blur (0–80), tint color + strength,
+  icon shifts, static previews instead of live, global scale (50–150%).
+- **Clear-all** — on/off, hide Screenshot / Select row,
+  Bottom / Screenshot / Select mode, bottom margin.
 
-- **Task carousel** — scale, opacity, blur, spacing.
-- **Clear-all button** — placement and action row.
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/PixelLauncher/pic12.png)
-</details>
-
-<details>
-<summary>🌀 Task cards carousel</summary>
-
-Screen **Task carousel**.
-
-- **Modify carousel — ON.**
-- **Extra spacing −17 px, Min scale 0.93x, Min opacity 1.00.**
-- **Card blur 12 px, Blur beyond bounds ON.**
-- **Tint color #000000, strength 26%.**
-- **Icon offset X 0 px, Y 0 px.**
-- **Disable Live Tile ON** (static snapshots),
-  Global scale OFF, Scale 100%.
-
 ![](../pic/PEP/PixelLauncher/pic13.png)
 ![](../pic/PEP/PixelLauncher/pic14.png)
 ![](../pic/PEP/PixelLauncher/pic15.png)
-</details>
-
-<details>
-<summary>🧹 Clear-all button</summary>
-
-- **Enable — ON.**
-- **Hide Screenshot/Select row — OFF.**
-- **Button mode — Bottom.**
-- **Bottom margin — 3.00x.**
-
 ![](../pic/PEP/PixelLauncher/pic16.png)
+
+</details>
 </details>
 
 <details>
-<summary>🧷 Launcher tiles</summary>
+<summary>🧷 Launcher tiles + hidden apps</summary>
 
-Screen **Quick Settings tiles**.
+- **Tiles page** — fixed (e.g. double-tap sleep: Not added → Bind)
+  and custom tiles with Bind.
+- **Hidden apps** — checkboxes, system filter, search.
+  Restart launcher to apply.
 
-- **Fixed tiles** — Double-tap sleep — **Not added**, **Bind tile**.
-- **Configurable tiles** — Custom tile — **Bind tile**.
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/PixelLauncher/pic17.png)
-</details>
-
-<details>
-<summary>🙈 Hidden apps</summary>
-
-Screen **Hide apps from launcher**.
-
-- **System apps — ON.**
-- Search, **Applications** list with checkboxes (all unchecked in shot):
-  4PDA, AdBlock, Authenticator, Barcode keyboard, BASIT, BCR, beeline, ByeByeDPI…
-- Restart launcher to apply.
-
 ![](../pic/PEP/HideApp/pic1.png)
+
+</details>
 </details>
 
 ---
@@ -601,99 +600,104 @@ Screen **Hide apps from launcher**.
 <details>
 <summary>🌊 Main — profiles and spring</summary>
 
-- **System Integration — Active — ON.**
-- **Playground** — Example cards for testing.
-- **Profiles** — Import / Export / Save / Online Configs.
-- **Spring Physics** — Pull **1.51**, Stiffness **148.62**,
-  Damping **1.00**, Fling **1.37**,
-  Resistance **4.00**, Speed **168.52**.
+- Master **System Integration — on/off.**
+- **Playground** — test cards.
+- **Profiles** — Save / Import / Export / Online profiles in one tap
+  (iOS Rubber Band, Elastic, Snap Back, Wave, Zoom Pulse, Bouncy Ball and more).
+- **Spring** — pull (0.1–3), stiffness (10–1000), damping (0.1–2),
+  fling (0.1–3), resistance curve (1–8), speed (1–300%).
+
+Moving any slider makes your setup custom until you save it.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/Scroll/pic1.png)
 ![](../pic/PEP/Scroll/pic2.png)
 ![](../pic/PEP/Scroll/pic3.png)
 ![](../pic/PEP/Scroll/pic10.png)
+
+</details>
 </details>
 
 <details>
-<summary>📐 Deform groups (all Off in shots)</summary>
+<summary>📐 Look — deform groups</summary>
 
-- **Vertical** — Off / Shrink / Grow.
-  Intensity 0.31, Horizontal 0.38, Limit 0.10, Pivots 0.50.
-- **Zoom (XY)** — Off. 0.20 / 0.20, Limit 0.10, Pivots 0.50.
-- **Horizontal** — Off. 0.20 / 0.00, Limit 0.10, Pivots 0.50.
-- Greyed out while Off.
+Vertical / Zoom / Horizontal — each **Off / shrink / stretch**.
+Then strength, limit, pivot points. Greyed out while Off.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/Scroll/pic4.png)
 ![](../pic/PEP/Scroll/pic5.png)
 ![](../pic/PEP/Scroll/pic6.png)
+
+</details>
 </details>
 
 <details>
 <summary>🔧 Fine + per-app</summary>
 
-- **System Parameters** — Input Smooth 0.50, Min Velocity 8.00,
-  Min Value 0.60, PULL 0.40, FLING 0.70, Compose Divider 3.33, Smart Pivot.
-- **Compose Delta Smoothing — ON.**
-  Hybrid mode, Reference 10.00, Multiplier 0.00,
-  Correction 0.33, Window 2.00, Ramp 1.00.
-- **App Configuration — Add Application.**
-  Shot: Pixel Launcher, Smoothing OFF, Disable ON, Multiplier 1.0.
-- **Reset Settings** button.
+- **Fine** — input smoothing, cutoffs, pull / fling smoothing,
+  Compose divider, smart pivot.
+- **Compose smoothing** — auto fix for modern lists
+  (behavior / hybrid / stack modes, window, correction).
+- **Per app** — Add Application: own multiplier (0–6),
+  smoothing, or fully off. Reset button.
+
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/Scroll/pic7.png)
 ![](../pic/PEP/Scroll/pic8.png)
 ![](../pic/PEP/Scroll/pic9.png)
+
+</details>
 </details>
 
 ---
 
 ## Heat — instant, no reboot
 
-Profiles switch **in seconds on the running phone**.
+Switches **in seconds on the running phone**.
 Old screens may still offer a reboot — just press OK, it already works.
 
 <details>
-<summary>🌡 Global + per-app + queue</summary>
+<summary>🌡 Global + per-game + tile queue</summary>
 
-Screen **Thermals Manager**.
+- **Global profile** — default for everything. Stock + Battery / Processor combos
+  (Soft +5°, Medium +9°, Hard +15°, Off = extreme).
+- **Per app** — own profile per game, or Follow global.
+  The phone watches the open app every second and swaps itself.
+- **Tile queue (up to 5)** — tap the Heat tile to cycle favorites.
+- Red cards = hot modes. Short sessions only.
 
-- **Global profile** — shot: **Battery +9c; Soc +90c — System —
-  battery_medium_soc_off.json** (+ `+` button).
-- **Tile profile queue — 0/5 — Add profile — Queue is empty.**
-- **Show system apps — ON**, search, **Application profiles**.
-- Row: 3 Button Navigation Bar — System — Global — same profile.
-- Tap a row → profile picker: **Follow global** (selected in shot),
-  **Stock — thermal_info_config.json**,
-  **Battery +15c, +15c/+15c, +15c/+5c, +15c/+90c, +15c/+9c, +5c…**
-- Global picker shows the same list with current check.
-
-The phone watches the open app **every second** and swaps itself.
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/Thermal/pic1.png)
 ![](../pic/PEP/Thermal/pic2.png)
 ![](../pic/PEP/Thermal/pic3.png)
+
+</details>
 </details>
 
 <details>
-<summary>🧪 Config editor</summary>
+<summary>🧪 Profile editor</summary>
 
-Screen **Config editor**.
+- Copy a stock profile, rename, tune charging / processor limits.
+- Search over hundreds of fields, hints per field.
+- **Save / Save and apply**, import / export JSON.
+- Stock configs are locked — clone before editing.
 
-- **Source: Vendor original.**
-- **Profile name — Custom thermal.**
-- **File name (optional)** — empty, latin auto-convert.
-- Tabs **SOC / Battery / All** (All in shot).
-- **Save, Save and apply.**
-- **Configurator — Showing 761 of 761 fields**, search,
-  tree Root 761: battery, BIG, cam_therm, cellular-emergency, charge_therm…
-- Expanded node shows rows like Coefficient, Combination,
-  Formula MAXIMUM, HotHysteresis, HotThreshold, Multiplier 0.001,
-  PassiveDelay 7000, PollingDelay 300000 — with **Known / Throttling** badges.
-
-System configs are locked — clone before editing.
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/Thermal/pic4.png)
 ![](../pic/PEP/Thermal/pic5.png)
+
+</details>
 </details>
 
 ---
@@ -701,29 +705,17 @@ System configs are locked — clone before editing.
 ## Modules
 
 <details>
-<summary>🧩 Modules list (real shots)</summary>
+<summary>🧩 Modules list</summary>
 
-Screen **LSPlant Addons — 0 installed — Active: 8 of 8**.
+- **Built-in** (from firmware) + **imported** `.jar` files.
+- Each: on / off, where it works, its settings and pages,
+  import / export, update check, delete.
+- **Where it works** — Default / Custom / Merge targets + app picker.
+- Crash protection: repeated crashes pause modules in safe mode.
+- **Module tiles** — own Quick Settings toggles. Long-press opens the page.
 
-- **Import Addon — Select a .jar file.**
-- **Active Apps — 5 apps with hooks** (expandable:
-  Settings 2, System UI 2 — Ambient Extend + SystemUI Hooks,
-  Camera 1, Pixel Launcher 1, 4PDA 1).
-- **System modules**:
-  - Icon Manager Settings UI v2.0.1
-  - Settings Homepage Item v2.0.1
-  - GCam Photo Torch v2.0.1
-  - Launcher hooks (nexuslauncher) — Merged scope
-  - Ambient Extend v2.0.1
-  - SystemUI Hooks v2.2.22
-  - IMS Carrier Config v2.0.1
-  - Settings Icon Style Override v2.0.1
-- Each: version, author, id, description, scope chip, on / off.
-- Expanded card: **Module Settings + Import / Export / Check updates.**
-- Tap scope → **Target Scope: Default / Custom / Merge**,
-  Default Targets (e.g. com.android.settings), **Cancel / Save**.
-- Custom targets → **Select apps** with Show system / Launchable only,
-  search, checkboxes, **Cancel / Confirm**.
+<details>
+<summary>Screenshots</summary>
 
 ![](../pic/PEP/Addons/pic1.png)
 ![](../pic/PEP/Addons/pic2.png)
@@ -731,6 +723,8 @@ Screen **LSPlant Addons — 0 installed — Active: 8 of 8**.
 ![](../pic/PEP/Addons/pic4.png)
 ![](../pic/PEP/Addons/pic5.png)
 ![](../pic/PEP/Addons/pic6.png)
+
+</details>
 </details>
 
 ---
