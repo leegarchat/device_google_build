@@ -1,5 +1,7 @@
 # PixelExtraParts — User Guide
 
+**English** | [Русский](../ru/PixelExtraParts.md)
+
 One app — **Pixel Extra Parts** — holds the extras of this ROM.
 No root. No extra modules. It just works.
 
