@@ -43,6 +43,19 @@ User-сборка, GApps внутри. KernelSU + OrangeFox уже вшиты �
 Magisk опционален: сначала прошейте стоковый `boot` (KernelSU по умолчанию, они конфликтуют).
 
 <details>
+<summary>📴 Без рута — стоковый boot</summary>
+
+- Прошейте стоковый `boot.img` под устройство — через OrangeFox (файл →
+  раздел Boot) или fastboot (`fastboot flash boot boot_stock.img`).
+- Pixel 8 ([Drive](https://drive.google.com/drive/folders/1_anleHdh9kraNcrpDnJXv1WyfWxiUYQw?usp=drive_link)) ·
+  8 Pro ([Drive](https://drive.google.com/drive/folders/1fcWUNDVoxFCkImUT9eIHynfDtl4W8qpH?usp=drive_link)) ·
+  8a ([Drive](https://drive.google.com/drive/folders/1FT6zbBcbrQGhL1-ZJsFgLBpDpUZsi700?usp=drive_link))
+- Один образ на **все A17 сборки** (вендорский блоб общий). Если блобы сменятся,
+  новый образ + его диапазон совместимости появятся здесь отдельно.
+
+</details>
+
+<details>
 <summary>❓ Вопрос → ответ</summary>
 
 - **Где скачать?** → [Ссылки](LINKS.md#rom)

@@ -43,6 +43,19 @@ Each has its own download folder. → [Links](LINKS.md)
 Magisk is optional: flash stock `boot` first (KernelSU is default, they conflict).
 
 <details>
+<summary>📴 Going unrooted — stock boot</summary>
+
+- Flash the stock `boot.img` for your device — via OrangeFox (pick file →
+  Boot partition) or fastboot (`fastboot flash boot boot_stock.img`).
+- Pixel 8 ([Drive](https://drive.google.com/drive/folders/1_anleHdh9kraNcrpDnJXv1WyfWxiUYQw?usp=drive_link)) ·
+  8 Pro ([Drive](https://drive.google.com/drive/folders/1fcWUNDVoxFCkImUT9eIHynfDtl4W8qpH?usp=drive_link)) ·
+  8a ([Drive](https://drive.google.com/drive/folders/1FT6zbBcbrQGhL1-ZJsFgLBpDpUZsi700?usp=drive_link))
+- One image fits **all A17 builds** (same vendor blob). If vendor blobs ever
+  change, a new image + its compatible range will be linked here separately.
+
+</details>
+
+<details>
 <summary>❓ Questions → answers</summary>
 
 - **Where to download?** → [Links](LINKS.md#rom)

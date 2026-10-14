@@ -12,6 +12,13 @@
 - Pixel 8 Pro (husky): [Drive](https://drive.google.com/drive/folders/1xJBAmFVuixbJIOxSxxb6w4GR5Gh_Swbr?usp=drive_link)
 - Pixel 8a (akita): [Drive](https://drive.google.com/drive/folders/1j13eyDbbE3ix1YVqVp8Wh061yQppYpTh?usp=drive_link)
 
+## Stock boot (unroot)
+
+- One image fits all A17 builds. If blobs change, new image + range linked separately.
+- Pixel 8: [Drive](https://drive.google.com/drive/folders/1_anleHdh9kraNcrpDnJXv1WyfWxiUYQw?usp=drive_link)
+- Pixel 8 Pro: [Drive](https://drive.google.com/drive/folders/1fcWUNDVoxFCkImUT9eIHynfDtl4W8qpH?usp=drive_link)
+- Pixel 8a: [Drive](https://drive.google.com/drive/folders/1FT6zbBcbrQGhL1-ZJsFgLBpDpUZsi700?usp=drive_link)
+
 <details>
 <summary>Drive says quota exceeded?</summary>
 
