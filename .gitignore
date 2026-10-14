@@ -3,3 +3,6 @@ __pycache__/
 
 .history/
 .lh/
+
+# Per-release TG post (filled from docs/post.md template, never commit)
+docs/post.md
