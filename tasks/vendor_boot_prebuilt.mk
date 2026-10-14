@@ -21,10 +21,13 @@
 # VENDOR_BOOT/ source tree inside the target-files staging dir.
 #
 # Layout:
-#   bin/bootsmasher-host     — host x86_64 musl binary
+#   bin/bootsmasher-host     — host x86_64 musl binary (install --file mode)
 #   prebuilts/*.lz4          — recovery cpio payload (exactly one blob)
 #   prebuilts/config.txt     — single line: the exact payload filename.
 #     Swapping the OrangeFox blob is a data-only change, this mk is untouched.
+#   touch/<codename>.lgz     — per-device touch archives, injected into the
+#     recovery payload root (--inject-lgz). Missing file for the build
+#     device = install without touch archive (stock touch path covers it).
 #
 # Included via: -include $(sort $(wildcard device/*/build/tasks/*.mk))
 $(info INSTALLED_VENDOR_BOOTIMAGE_TARGET=$(INSTALLED_VENDOR_BOOTIMAGE_TARGET))
@@ -39,6 +42,18 @@ _FOX_BIN := $(_FOX_DIR)/bin/bootsmasher-host
 _FOX_LZ4_NAME := $(strip $(shell cat $(_FOX_DIR)/prebuilts/config.txt))
 _FOX_PAYLOAD := $(_FOX_DIR)/prebuilts/$(_FOX_LZ4_NAME)
 
+# Device codename for --device + touch archive lookup. lineage_*.mk sets
+# DEVICE_CODENAME; fall back to parsing TARGET_PRODUCT (lineage_<dev>[-...]).
+_FOX_DEVICE := $(strip $(DEVICE_CODENAME))
+ifeq ($(_FOX_DEVICE),)
+_FOX_DEVICE := $(strip $(firstword $(subst -, ,$(word 2,$(subst _, ,$(TARGET_PRODUCT))))))
+endif
+_FOX_LGZ := $(_FOX_DIR)/touch/$(_FOX_DEVICE).lgz
+# --device only when we know the codename; --inject-lgz only when the
+# archive exists (wildcard is empty otherwise, keeping stock touch path).
+_FOX_DEV_ARGS := $(if $(_FOX_DEVICE),--device $(_FOX_DEVICE))
+_FOX_LGZ_ARGS := $(if $(wildcard $(_FOX_LGZ)),--inject-lgz $(_FOX_LGZ))
+
 # Override vendor_boot recipe: stock mkbootimg build first (same command as
 # build/make/core/Makefile "Target vendor_boot image" rule), then inject
 # OrangeFox recovery ramdisk via bootsmasher, then re-sign with avbtool
@@ -52,7 +67,7 @@ ifeq ($(BOARD_AVB_ENABLE),true)
 $(INSTALLED_VENDOR_BOOTIMAGE_TARGET): $(_FOX_BIN) $(_FOX_PAYLOAD)
 	$(call pretty,"Target vendor_boot image (OrangeFox): $@")
 	$(hide) $(MKBOOTIMG) $(INTERNAL_VENDOR_BOOTIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --vendor_ramdisk $(INTERNAL_VENDOR_RAMDISK_TARGET) $(INTERNAL_VENDOR_RAMDISK_FRAGMENT_ARGS) --vendor_boot $@
-	$(hide) $(_FOX_BIN) install --file -i $@ -c $(_FOX_PAYLOAD) -o $@.fox --log $(PRODUCT_OUT)/fox_install.log
+	$(hide) $(_FOX_BIN) install --file -i $@ -c $(_FOX_PAYLOAD) -o $@.fox --log $(PRODUCT_OUT)/fox_install.log $(_FOX_DEV_ARGS) $(_FOX_LGZ_ARGS)
 	$(hide) mv $@.fox $@
 	$(hide) $(call assert-max-image-size,$@,$(call get-hash-image-max-size,$(BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE)))
 	$(hide) $(AVBTOOL) add_hash_footer --image $@ \
@@ -64,7 +79,7 @@ else
 $(INSTALLED_VENDOR_BOOTIMAGE_TARGET): $(_FOX_BIN) $(_FOX_PAYLOAD)
 	$(call pretty,"Target vendor_boot image (OrangeFox, no AVB): $@")
 	$(hide) $(MKBOOTIMG) $(INTERNAL_VENDOR_BOOTIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --vendor_ramdisk $(INTERNAL_VENDOR_RAMDISK_TARGET) $(INTERNAL_VENDOR_RAMDISK_FRAGMENT_ARGS) --vendor_boot $@
-	$(hide) $(_FOX_BIN) install --file -i $@ -c $(_FOX_PAYLOAD) -o $@.fox --log $(PRODUCT_OUT)/fox_install.log
+	$(hide) $(_FOX_BIN) install --file -i $@ -c $(_FOX_PAYLOAD) -o $@.fox --log $(PRODUCT_OUT)/fox_install.log $(_FOX_DEV_ARGS) $(_FOX_LGZ_ARGS)
 	$(hide) mv $@.fox $@
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE))
 endif
