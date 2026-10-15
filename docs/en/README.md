@@ -73,8 +73,27 @@ Magisk is optional: flash stock `boot` first (KernelSU is default, they conflict
 
 ## Go deeper
 
-- 📖 [Install OrangeFox](OrangeFox.md) — all 6 ways, backups, types A/B/C
+- 📖 [Install OrangeFox](OrangeFox.md) — Type A/B, backups, commands
 - 📝 [Changelog](CHANGELOG.md) — per-build history
 - ✨ [PEP features](PixelExtraParts.md) — full user guide with screenshots
-- 🔗 [Links](LINKS.md) — downloads, guides, chats, donate
+- 🔗 [Links](LINKS.md) — downloads, chats, donate
 - 👤 Maintainer: [@LeeGarGold](https://t.me/LeeGarGold) / [@LeeGarChat](https://t.me/LeeGarChat)
+
+<details>
+<summary>📦 Sources behind this build</summary>
+
+- Build scripts + OrangeFox packing: [device_google_build](https://github.com/leegarchat/device_google_build)
+- Device trees: [shusky](https://github.com/leegarchat/android_device_google_shusky) ·
+  [zuma](https://github.com/leegarchat/android_device_google_zuma) ·
+  [akita](https://github.com/leegarchat/android_device_google_akita)
+- PEP: [PixelExtraParts](https://github.com/leegarchat/PixelExtraParts)
+- Vendors (partial — big files like GCam didn't fit, re-extract locally):
+  [akita](https://github.com/leegarchat/proprietary_vendor_google_akita) ·
+  [husky](https://github.com/leegarchat/proprietary_vendor_google_husky) ·
+  [shiba](https://github.com/leegarchat/proprietary_vendor_google_shiba) ·
+  base: [TheMuppets](https://github.com/TheMuppets)
+- Kernels + build scripts: [pixel-kernels](https://github.com/leegarchat/pixel-kernels)
+- OrangeFox sources: [twrp_device_google_pixels](https://github.com/leegarchat/twrp_device_google_pixels)
+- Extras: JamesDSP (from crDroid), slightly modified FaceUnlock vendor.
+
+</details>

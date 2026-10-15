@@ -38,25 +38,6 @@
 - **PEP: патчи освежены** под октябрьское дерево (часть старых апстрим
   впитал — выведены).
 
-<details>
-<summary>📦 Исходники этой сборки</summary>
-
-- Скрипты сборки + упаковка OrangeFox: [device_google_build](https://github.com/leegarchat/device_google_build)
-- Древа устройств: [shusky](https://github.com/leegarchat/android_device_google_shusky) ·
-  [zuma](https://github.com/leegarchat/android_device_google_zuma) ·
-  [akita](https://github.com/leegarchat/android_device_google_akita)
-- PEP: [PixelExtraParts](https://github.com/leegarchat/PixelExtraParts)
-- Вендоры (частично — большие файлы вроде GCam не влезли, достать локально):
-  [akita](https://github.com/leegarchat/proprietary_vendor_google_akita) ·
-  [husky](https://github.com/leegarchat/proprietary_vendor_google_husky) ·
-  [shiba](https://github.com/leegarchat/proprietary_vendor_google_shiba) ·
-  база: [TheMuppets](https://github.com/TheMuppets)
-- Ядра + скрипты сборки: [pixel-kernels](https://github.com/leegarchat/pixel-kernels)
-- Исходники OrangeFox: [twrp_device_google_pixels](https://github.com/leegarchat/twrp_device_google_pixels)
-- Мелочи: JamesDSP (из crDroid), слегка модифицированный FaceUnlock vendor.
-
-</details>
-
 ## 12.2 — 27/09/2026
 
 - База на EvolutionX 12.2. Сентябрьский патч.

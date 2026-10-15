@@ -73,8 +73,27 @@ Magisk опционален: сначала прошейте стоковый `b
 
 ## Дальше
 
-- 📖 [Установка OrangeFox](OrangeFox.md) — все 6 способов, бэкапы, типы A/B/C
+- 📖 [Установка OrangeFox](OrangeFox.md) — типы A/B, бэкапы, команды
 - 📝 [Чанджлог](CHANGELOG.md) — история по сборкам
 - ✨ [Фишки PEP](PixelExtraParts.md) — полный гид со скриншотами
-- 🔗 [Ссылки](LINKS.md) — загрузки, гайды, чаты, донат
+- 🔗 [Ссылки](LINKS.md) — загрузки, чаты, донат
 - 👤 Мейнтейнер: [@LeeGarGold](https://t.me/LeeGarGold) / [@LeeGarChat](https://t.me/LeeGarChat)
+
+<details>
+<summary>📦 Исходники этой сборки</summary>
+
+- Скрипты сборки + упаковка OrangeFox: [device_google_build](https://github.com/leegarchat/device_google_build)
+- Древа устройств: [shusky](https://github.com/leegarchat/android_device_google_shusky) ·
+  [zuma](https://github.com/leegarchat/android_device_google_zuma) ·
+  [akita](https://github.com/leegarchat/android_device_google_akita)
+- PEP: [PixelExtraParts](https://github.com/leegarchat/PixelExtraParts)
+- Вендоры (частично — большие файлы вроде GCam не влезли, достать локально):
+  [akita](https://github.com/leegarchat/proprietary_vendor_google_akita) ·
+  [husky](https://github.com/leegarchat/proprietary_vendor_google_husky) ·
+  [shiba](https://github.com/leegarchat/proprietary_vendor_google_shiba) ·
+  база: [TheMuppets](https://github.com/TheMuppets)
+- Ядра + скрипты сборки: [pixel-kernels](https://github.com/leegarchat/pixel-kernels)
+- Исходники OrangeFox: [twrp_device_google_pixels](https://github.com/leegarchat/twrp_device_google_pixels)
+- Мелочи: JamesDSP (из crDroid), слегка модифицированный FaceUnlock vendor.
+
+</details>

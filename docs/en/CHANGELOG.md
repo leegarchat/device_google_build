@@ -38,25 +38,6 @@
 - **PEP: patches refreshed** to the October source tree (part of the old
   patches upstream absorbed — retired).
 
-<details>
-<summary>📦 Sources behind this build</summary>
-
-- Build scripts + OrangeFox packing: [device_google_build](https://github.com/leegarchat/device_google_build)
-- Device trees: [shusky](https://github.com/leegarchat/android_device_google_shusky) ·
-  [zuma](https://github.com/leegarchat/android_device_google_zuma) ·
-  [akita](https://github.com/leegarchat/android_device_google_akita)
-- PEP: [PixelExtraParts](https://github.com/leegarchat/PixelExtraParts)
-- Vendors (partial — big files like GCam didn't fit, re-extract locally):
-  [akita](https://github.com/leegarchat/proprietary_vendor_google_akita) ·
-  [husky](https://github.com/leegarchat/proprietary_vendor_google_husky) ·
-  [shiba](https://github.com/leegarchat/proprietary_vendor_google_shiba) ·
-  base: [TheMuppets](https://github.com/TheMuppets)
-- Kernels + build scripts: [pixel-kernels](https://github.com/leegarchat/pixel-kernels)
-- OrangeFox sources: [twrp_device_google_pixels](https://github.com/leegarchat/twrp_device_google_pixels)
-- Extras: JamesDSP (from crDroid), slightly modified FaceUnlock vendor.
-
-</details>
-
 ## 12.2 — 27/09/2026
 
 - Base synced to EvolutionX 12.2. September security patch.
