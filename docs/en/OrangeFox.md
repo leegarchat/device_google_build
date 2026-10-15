@@ -4,8 +4,14 @@
 
 `Guide v2 · 2026-10-14 · payload 16_1-aio`
 
+> Recovery source base is R12/A16 — works fine on the A17 ROM, recovery
+> and system versions are independent here.
+
 Two install types. **Type A (AIO zip) is the main path** — smart installer,
 backup, byte-check. **Type B (BootStaff image)** — direct flash, no installer.
+
+> **On stock + Windows? Do Type A, Way 2 below — ignore the rest.**
+> Ways 3–5 need root / recovery / a second phone you don't have yet.
 
 > Pixel 8 series = recovery lives in `vendor_boot` only.
 > No need to flash `boot`, `dtbo` or `init_boot` for recovery.
@@ -124,6 +130,8 @@ no menus — know your slot.
 - PC install: backup + `install.log` in `backup/<date-time>/` next to the script.
 - On-device: `/sdcard/backup_vendor_boot/`.
 - Success = `RESULT: OK` on screen. First boot to recovery can take up to 60 seconds.
+- **Copy the backup off the phone BEFORE the ROM's Format Data** —
+  Format wipes `/sdcard/backup_vendor_boot/` too. `adb pull` it to PC first.
 - To restore: installer → Restore → pick backup. Restored bytes are flashed as-is.
 
 </details>

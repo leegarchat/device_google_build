@@ -7,6 +7,9 @@
 
 ## 12.3 — 15/10/2026
 
+> For normal users: October security, updater installs the root manager app
+> by itself, shade zoom fixed, full translations. Update over 12.2 without wipe.
+
 - Base synced to the latest EvolutionX source. October Android security patch.
   Vendor & boot security patches unchanged.
 - Kernel: WildKSU release 20 → 21. Manager: reSukiSU RC1 → RC3.
