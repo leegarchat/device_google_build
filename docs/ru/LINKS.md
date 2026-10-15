@@ -7,10 +7,10 @@
 
 ## Загрузки ROM
 
-- Общая папка (все сборки): [Drive](https://drive.google.com/drive/u/0/folders/160d3KGHPnkksmYJ_ztDXOLXkXkl_jZj-)
-- Pixel 8 (shiba): [Drive](https://drive.google.com/drive/folders/1cm1fN7LsdoL02ymj95t9rb-Xj44KS3P3?usp=drive_link)
-- Pixel 8 Pro (husky): [Drive](https://drive.google.com/drive/folders/1xJBAmFVuixbJIOxSxxb6w4GR5Gh_Swbr?usp=drive_link)
-- Pixel 8a (akita): [Drive](https://drive.google.com/drive/folders/1j13eyDbbE3ix1YVqVp8Wh061yQppYpTh?usp=drive_link)
+- Общая папка (все сборки): [Drive](https://drive.google.com/drive/folders/160d3KGHPnkksmYJ_ztDXOLXkXkl_jZj-)
+- Pixel 8 (shiba): [Drive](https://drive.google.com/drive/folders/1-PnJdc5N3zoXy-dMSEQ6lPexODp8pD6z)
+- Pixel 8 Pro (husky): [Drive](https://drive.google.com/drive/folders/1zpIRbL1XoHBq-drckR8ryyYKDMXoMVrF)
+- Pixel 8a (akita): [Drive](https://drive.google.com/drive/folders/1zjqXXBLWAqHHdpOnVpj-BIMQLNPteS2e)
 
 ## Стоковый boot (без рута)
 

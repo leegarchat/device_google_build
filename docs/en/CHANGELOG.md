@@ -5,7 +5,7 @@
 > One section per build, newest on top. A new build = new section here,
 > old ones stay untouched.
 
-## 12.3 — pending
+## 12.3 — 15/10/2026
 
 - Base synced to the latest EvolutionX source. October Android security patch.
   Vendor & boot security patches unchanged.
