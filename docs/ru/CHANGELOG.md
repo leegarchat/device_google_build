@@ -10,6 +10,7 @@
 - База на свежем сорсе EvolutionX. Октябрьский патч Android.
   Vendor и boot патчи без изменений.
 - Ядро: WildKSU релиз 20 → 21. Менеджер: reSukiSU RC1 → RC3.
+- Рекавери: OrangeFox обновлён до R12 — база исходников A16.
 - **Автоустановка менеджера reSukiSU** (только KSU-сборки):
   APK едет внутри образа инертным файлом и ставится один раз как
   обычное приложение после первой загрузки / первой загрузки после
@@ -36,6 +37,25 @@
 - **PEP: переводы полные** — весь набор строк на всех языках.
 - **PEP: патчи освежены** под октябрьское дерево (часть старых апстрим
   впитал — выведены).
+
+<details>
+<summary>📦 Исходники этой сборки</summary>
+
+- Скрипты сборки + упаковка OrangeFox: [device_google_build](https://github.com/leegarchat/device_google_build)
+- Древа устройств: [shusky](https://github.com/leegarchat/android_device_google_shusky) ·
+  [zuma](https://github.com/leegarchat/android_device_google_zuma) ·
+  [akita](https://github.com/leegarchat/android_device_google_akita)
+- PEP: [PixelExtraParts](https://github.com/leegarchat/PixelExtraParts)
+- Вендоры (частично — большие файлы вроде GCam не влезли, достать локально):
+  [akita](https://github.com/leegarchat/proprietary_vendor_google_akita) ·
+  [husky](https://github.com/leegarchat/proprietary_vendor_google_husky) ·
+  [shiba](https://github.com/leegarchat/proprietary_vendor_google_shiba) ·
+  база: [TheMuppets](https://github.com/TheMuppets)
+- Ядра + скрипты сборки: [pixel-kernels](https://github.com/leegarchat/pixel-kernels)
+- Исходники OrangeFox: [twrp_device_google_pixels](https://github.com/leegarchat/twrp_device_google_pixels)
+- Мелочи: JamesDSP (из crDroid), слегка модифицированный FaceUnlock vendor.
+
+</details>
 
 ## 12.2 — 27/09/2026
 

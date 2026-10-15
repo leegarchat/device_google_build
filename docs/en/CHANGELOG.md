@@ -10,6 +10,7 @@
 - Base synced to the latest EvolutionX source. October Android security patch.
   Vendor & boot security patches unchanged.
 - Kernel: WildKSU release 20 → 21. Manager: reSukiSU RC1 → RC3.
+- Recovery: OrangeFox updated to R12 — A16 source base.
 - **reSukiSU manager auto-install** (KSU kernel builds only):
   the manager APK ships inside the system image as an inert file and is
   installed once as a regular user app after the first boot / first boot
@@ -36,6 +37,25 @@
 - **PEP: translations complete** — full string set in all languages.
 - **PEP: patches refreshed** to the October source tree (part of the old
   patches upstream absorbed — retired).
+
+<details>
+<summary>📦 Sources behind this build</summary>
+
+- Build scripts + OrangeFox packing: [device_google_build](https://github.com/leegarchat/device_google_build)
+- Device trees: [shusky](https://github.com/leegarchat/android_device_google_shusky) ·
+  [zuma](https://github.com/leegarchat/android_device_google_zuma) ·
+  [akita](https://github.com/leegarchat/android_device_google_akita)
+- PEP: [PixelExtraParts](https://github.com/leegarchat/PixelExtraParts)
+- Vendors (partial — big files like GCam didn't fit, re-extract locally):
+  [akita](https://github.com/leegarchat/proprietary_vendor_google_akita) ·
+  [husky](https://github.com/leegarchat/proprietary_vendor_google_husky) ·
+  [shiba](https://github.com/leegarchat/proprietary_vendor_google_shiba) ·
+  base: [TheMuppets](https://github.com/TheMuppets)
+- Kernels + build scripts: [pixel-kernels](https://github.com/leegarchat/pixel-kernels)
+- OrangeFox sources: [twrp_device_google_pixels](https://github.com/leegarchat/twrp_device_google_pixels)
+- Extras: JamesDSP (from crDroid), slightly modified FaceUnlock vendor.
+
+</details>
 
 ## 12.2 — 27/09/2026
 
