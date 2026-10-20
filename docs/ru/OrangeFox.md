@@ -31,8 +31,8 @@
 <summary>📥 Загрузки</summary>
 
 - **Тип A — aio.zip**: [ссылка](https://drive.google.com/drive/folders/1S75nhHK3bSB8Au2ajkh46vGqCCqvTjCT)
-- **Тип B — BootStaff-образы**: внутри каждой папки релиза → `BootStaff/Recovery`.
-  Те же папки, что ROM: [Ссылки](LINKS.md#загрузки-rom).
+- **Тип B — BootStaff-образы**: внутри каждой папки релиза → `BootStaff/Recovery`,
+  те же папки, что ROM.
 
 </details>
 

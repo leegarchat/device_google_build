@@ -5,6 +5,32 @@
 > One section per build, newest on top. A new build = new section here,
 > old ones stay untouched.
 
+## 12.4 — 20/10/2026
+
+> For normal users: root manager installs by itself with no failures,
+> Data format in recovery fixed, two new PEP addons. Update over 12.3
+> without wipe.
+
+- **reSukiSU manager install fixed — works 100%**: the installer now runs
+  in the KSU kernel context, so it starts on every boot with no SELinux
+  denials. Fresh install, update from an older version, and keep-newer
+  (no downgrade) all verified on-device. A deliberate user uninstall is
+  still respected.
+- **OrangeFox: Data formatting fixed** — works exactly as intended now and
+  causes no follow-up issues.
+- Base synced to the latest EvolutionX sources (Updater app rewrites and
+  Face Unlock staying off included).
+- **PEP: new RAM Purge addon** — a single button that drops all background
+  activity (`kill-all`). Needs no root: PEP runs as system and already
+  holds the permission. Measured on Pixel 8: free RAM 319 → 1700 MB,
+  cold Maps start 2.8 → 1.3 s. Press it when the phone feels choked after
+  a long uptime — not in a loop, one press is enough.
+- **PEP: new Yandex Maps Fast addon** (for CIS users) — Vulkan render
+  instead of the blocklisted OpenGL path (map tiles load ~10 s faster),
+  discovery feed collapsed by default, taxi price button removed from
+  place cards, search opens on the History tab. Only Vulkan is on by
+  default; the rest are opt-in toggles.
+
 ## 12.3 — 15/10/2026
 
 > For normal users: October security, updater installs the root manager app

@@ -31,8 +31,8 @@ backup, byte-check. **Type B (BootStaff image)** — direct flash, no installer.
 <summary>📥 Downloads</summary>
 
 - **Type A — aio.zip**: [link](https://drive.google.com/drive/folders/1S75nhHK3bSB8Au2ajkh46vGqCCqvTjCT)
-- **Type B — BootStaff images**: inside each release folder → `BootStaff/Recovery`.
-  Same folders as the ROM: [Links](LINKS.md#rom-downloads).
+- **Type B — BootStaff images**: inside each release folder → `BootStaff/Recovery`,
+  same folders as the ROM.
 
 </details>
 
