@@ -5,7 +5,7 @@
 > One section per build, newest on top. A new build = new section here,
 > old ones stay untouched.
 
-## 12.3 — 20/10/2026
+## 12.4 — 20/10/2026
 
 > For normal users: root manager installs by itself with no failures,
 > Data format in recovery fixed, two new PEP addons. Update over 12.3
