@@ -106,6 +106,15 @@ Magisk is optional: flash stock `boot` first (KernelSU is default, they conflict
 - **Copy backups off the phone BEFORE Format Data** — Format wipes internal
   storage including `/sdcard` backups. `adb pull` them to PC first.
 - **Bootloop?** → Send logs (`flog.sh` in recovery) to the [support group](https://t.me/LeeGarChatEvox). No logs = no fix.
+- **Fingerprint glitchy?** → Recalibrate the UDFPS sensor without Google's
+  tool (by Dyneteve & @Lunarixus):
+  1. `fastboot oem udfps get-cal-url` — the terminal prints a link.
+  2. Open the link, download the calibration file.
+  3. `fastboot stage <file>` + `fastboot oem udfps update-cal <file>`.
+  For `<file>`: either drop the file into your terminal's working folder
+  and type its name, or drag & drop the file into the terminal window
+  after typing each command (the full path pastes itself).
+  May need doing twice to stick.
 - **Banking / Wallet / work apps?** → The ROM is rooted by default (WildKSU).
   Face Unlock itself works with banking login, but **root can trip detection**
   in banking, Wallet or Intune. Need zero risk? Go unrooted (stock boot block above).
