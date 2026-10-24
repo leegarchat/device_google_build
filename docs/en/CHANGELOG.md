@@ -12,7 +12,7 @@
 
 - **Stock blobs updated to CP3A.261005.005** (akita/husky/shiba):
   October vendor security patch and firmware from the stock images.
-- **Kernel raised 6.1.152 → 6.1.162**, build matched to the October
+- **Kernel raised 6.1.157 → 6.1.162**, build matched to the October
   vendor blobs.
 - **Face Unlock — the stock secure one**: hardware-backed (Class 3),
   works with banking apps. The third-party replacement is removed so

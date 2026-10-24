@@ -14,10 +14,14 @@
 
 ## Стоковый boot (без рута)
 
-- Один образ на все A17 сборки. Сменятся блобы — новый образ + диапазон отдельно.
-- Pixel 8: [Drive](https://drive.google.com/drive/folders/1_anleHdh9kraNcrpDnJXv1WyfWxiUYQw?usp=drive_link)
-- Pixel 8 Pro: [Drive](https://drive.google.com/drive/folders/1fcWUNDVoxFCkImUT9eIHynfDtl4W8qpH?usp=drive_link)
-- Pixel 8a: [Drive](https://drive.google.com/drive/folders/1FT6zbBcbrQGhL1-ZJsFgLBpDpUZsi700?usp=drive_link)
+- **6.1.162** — EvolutionX 12.3 начиная с 24.10.2026:
+  - Pixel 8: [Drive](https://drive.google.com/drive/folders/1kEh7HaklCBUfBqVji3iOEIwl4PmBQngr?usp=drive_link)
+  - Pixel 8 Pro: [Drive](https://drive.google.com/drive/folders/1JQ9dXeh4-_4hgnO52Iblysap49KGZoOh?usp=drive_link)
+  - Pixel 8a: [Drive](https://drive.google.com/drive/folders/1kNmlngIuak_4efenfC8iasxU21MBN2cV?usp=drive_link)
+- **6.1.157** — более старые EvolutionX 12.x:
+  - Pixel 8: [Drive](https://drive.google.com/drive/folders/1_anleHdh9kraNcrpDnJXv1WyfWxiUYQw?usp=drive_link)
+  - Pixel 8 Pro: [Drive](https://drive.google.com/drive/folders/1fcWUNDVoxFCkImUT9eIHynfDtl4W8qpH?usp=drive_link)
+  - Pixel 8a: [Drive](https://drive.google.com/drive/folders/1FT6zbBcbrQGhL1-ZJsFgLBpDpUZsi700?usp=drive_link)
 
 <details>
 <summary>Drive пишет quota exceeded?</summary>
