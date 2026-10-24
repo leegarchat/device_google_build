@@ -5,6 +5,24 @@
 > One section per build, newest on top. A new build = new section here,
 > old ones stay untouched.
 
+## 12.3 — 24/10/2026
+
+> For normal users: October blobs and kernel, secure Face Unlock,
+> faster recovery install. Update over the previous 12.3 without wipe.
+
+- **Stock blobs updated to CP3A.261005.005** (akita/husky/shiba):
+  October vendor security patch and firmware from the stock images.
+- **Kernel raised 6.1.152 → 6.1.162**, build matched to the October
+  vendor blobs.
+- **Face Unlock — the stock secure one**: hardware-backed (Class 3),
+  works with banking apps. The third-party replacement is removed so
+  it can't shadow the Pixel implementation.
+- **OrangeFox updated**: new High-speed flash (ROM install in ~1 min
+  instead of 4–5, optional toggle, sideload still uses the classic
+  path), Live slot switch (flash ROM → GApps → Magisk in one go
+  without rebooting recovery, fixed battery icon readings.
+- Base synced to the latest EvolutionX sources.
+
 ## 12.3 — 20/10/2026
 
 > For normal users: root manager installs by itself with no failures,
