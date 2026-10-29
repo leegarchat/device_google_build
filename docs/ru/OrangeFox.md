@@ -30,8 +30,8 @@
 <details>
 <summary>📥 Загрузки</summary>
 
-- **Тип A — aio.zip**: [ссылка](https://drive.google.com/drive/folders/1S75nhHK3bSB8Au2ajkh46vGqCCqvTjCT)
-- **Тип B — BootStaff-образы**: внутри каждой папки релиза → `BootStaff/Recovery`,
+- **Тип A — aio.zip**: [ссылка](https://github.com/leegarchat/twrp_device_google_pixels/releases)
+- **Тип B — BootStaff-образы**: внутри каждой папки релиза → `Boot_staff`,
   те же папки, что ROM.
 
 </details>

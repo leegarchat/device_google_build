@@ -30,8 +30,8 @@ backup, byte-check. **Type B (BootStaff image)** — direct flash, no installer.
 <details>
 <summary>📥 Downloads</summary>
 
-- **Type A — aio.zip**: [link](https://drive.google.com/drive/folders/1S75nhHK3bSB8Au2ajkh46vGqCCqvTjCT)
-- **Type B — BootStaff images**: inside each release folder → `BootStaff/Recovery`,
+- **Type A — aio.zip**: [link](https://github.com/leegarchat/twrp_device_google_pixels/releases)
+- **Type B — BootStaff images**: inside each release folder → `Boot_staff/`,
   same folders as the ROM.
 
 </details>
