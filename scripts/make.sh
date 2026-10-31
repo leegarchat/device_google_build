@@ -408,6 +408,16 @@ PYEOF
     fi
 
     echo -e "${CLR_GREEN}✓ Релиз сформирован успешно!${CLR_RESET}\n"
+
+    # Touch ключевых img текущим временем — свежие файлы видно сразу
+    touch "out/target/product/$DEVICE_CODE"/boot.img \
+        "out/target/product/$DEVICE_CODE"/dtbo.img \
+        "out/target/product/$DEVICE_CODE"/init_boot.img \
+        "out/target/product/$DEVICE_CODE"/vendor_boot.img \
+        "out/target/product/$DEVICE_CODE"/vendor_kernel_boot.img \
+        "out/target/product/$DEVICE_CODE"/vbmeta.img \
+        "out/target/product/$DEVICE_CODE"/vbmeta_system.img \
+        "out/target/product/$DEVICE_CODE"/vbmeta_vendor.img 2>/dev/null || true
 fi
 
 # Корректный выход: return для source, exit для прямого запуска

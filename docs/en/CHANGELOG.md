@@ -12,6 +12,16 @@
 
 - **OrangeFox updated**: ver beta 2 patch 1
 - **Base synced to the latest EvolutionX sources**
+- **New PEP addon: Flash Notify** — custom camera-flash blink on
+  notifications: flash count (1–50), total blink time and torch
+  brightness, with a test button. Enabling it turns the system Camera
+  flash toggle off by itself. Measured floor ~60ms per phase, so the
+  total time always wins over the count.
+- **Kernel WildKSU 22 + bakaSU manager** (resukisu renamed): the new
+  built-in manager APK installs itself on first boot, pulls over all
+  settings and themes from the old reSukiSU automatically, then removes
+  it (two managers cannot coexist). Seamless if reSukiSU was installed
+  before — nothing to do by hand.
 
 ## 12.3 — 24/10/2026
 
