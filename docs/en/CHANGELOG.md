@@ -5,6 +5,14 @@
 > One section per build, newest on top. A new build = new section here,
 > old ones stay untouched.
 
+## 12.3 — 31/10/2026
+
+> For normal users: October blobs and kernel, secure Face Unlock,
+> faster recovery install. Update over the previous 12.3 without wipe.
+
+- **OrangeFox updated**: ver beta 2 patch 1
+- **Base synced to the latest EvolutionX sources**
+
 ## 12.3 — 24/10/2026
 
 > For normal users: October blobs and kernel, secure Face Unlock,
