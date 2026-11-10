@@ -320,6 +320,19 @@ fi
 
 echo -e "${CLR_GREEN}✨ Сборка успешно завершена за ${BUILD_DURATION} сек!${CLR_RESET}"
 
+# Touch ключевых img текущим временем — свежие файлы видно сразу.
+# Выполняется ВСЕГДА после успешной сборки (раньше было только внутри
+# --release, поэтому без -r даты не обновлялись). Ключ -c: не создавать
+# пустые файлы, если какого-то образа нет.
+touch -c "out/target/product/$DEVICE_CODE"/boot.img \
+    "out/target/product/$DEVICE_CODE"/dtbo.img \
+    "out/target/product/$DEVICE_CODE"/init_boot.img \
+    "out/target/product/$DEVICE_CODE"/vendor_boot.img \
+    "out/target/product/$DEVICE_CODE"/vendor_kernel_boot.img \
+    "out/target/product/$DEVICE_CODE"/vbmeta.img \
+    "out/target/product/$DEVICE_CODE"/vbmeta_system.img \
+    "out/target/product/$DEVICE_CODE"/vbmeta_vendor.img 2>/dev/null || true
+
 # ============================================================
 # 7. Экспорт релиза (--release / --json)
 # ============================================================
@@ -409,15 +422,15 @@ PYEOF
 
     echo -e "${CLR_GREEN}✓ Релиз сформирован успешно!${CLR_RESET}\n"
 
-    # Touch ключевых img текущим временем — свежие файлы видно сразу
-    touch "out/target/product/$DEVICE_CODE"/boot.img \
-        "out/target/product/$DEVICE_CODE"/dtbo.img \
-        "out/target/product/$DEVICE_CODE"/init_boot.img \
-        "out/target/product/$DEVICE_CODE"/vendor_boot.img \
-        "out/target/product/$DEVICE_CODE"/vendor_kernel_boot.img \
-        "out/target/product/$DEVICE_CODE"/vbmeta.img \
-        "out/target/product/$DEVICE_CODE"/vbmeta_system.img \
-        "out/target/product/$DEVICE_CODE"/vbmeta_vendor.img 2>/dev/null || true
+    # Touch копий в релизной папке (исходники в out/ уже потроганы выше).
+    touch -c "$RELEASE_DIR"/boot.img \
+        "$RELEASE_DIR"/dtbo.img \
+        "$RELEASE_DIR"/init_boot.img \
+        "$RELEASE_DIR"/vendor_boot.img \
+        "$RELEASE_DIR"/vendor_kernel_boot.img \
+        "$RELEASE_DIR"/vbmeta.img \
+        "$RELEASE_DIR"/vbmeta_system.img \
+        "$RELEASE_DIR"/vbmeta_vendor.img 2>/dev/null || true
 fi
 
 # Корректный выход: return для source, exit для прямого запуска
