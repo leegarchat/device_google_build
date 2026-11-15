@@ -7,12 +7,13 @@
 
 ## 12.3 — 15/11/2026
 
-- **OrangeFox updated**
-- **Base synced to the latest EvolutionX sources**
-- **PEP addon: Flash Notify** — Update and add more futures.
-- **Update BakaSU Manager to stable release**.
-- Fix auto remove bakasu
-- Big update and redisignand fixes Pixel Extra Parts
+- **OrangeFox**: Updated
+- **ROM**: EvolutionX database updated to the latest version
+- **ROM**: Android security updated to the November patch
+- **PEP Addon**: Flash Notify - Hook update, many fine-tuning settings added for flashing lights for calls and notifications
+- **BakaSU**: Manager moved to stable release. Not Dev.
+- **BakaSU**: Fixed manager uninstallation during manual installation. The script is now more stable and responsive
+- **PEP App**: Major Pixel Extra Parts update. Apps, redesign, hook fixes, framework fixes
 
 ## 12.3 — 31/10/2026
 
