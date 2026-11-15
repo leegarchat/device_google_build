@@ -5,7 +5,7 @@
 > One section per build, newest on top. A new build = new section here,
 > old ones stay untouched.
 
-## 12.3 — 15/11/2026
+## 12.4 — 15/11/2026
 
 - **OrangeFox**: Updated
 - **ROM**: EvolutionX database updated to the latest version
