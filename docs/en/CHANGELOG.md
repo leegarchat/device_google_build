@@ -5,10 +5,16 @@
 > One section per build, newest on top. A new build = new section here,
 > old ones stay untouched.
 
-## 12.3 — 31/10/2026
+## 12.3 — 15/11/2026
 
-> For normal users: October blobs and kernel, secure Face Unlock,
-> faster recovery install. Update over the previous 12.3 without wipe.
+- **OrangeFox updated**
+- **Base synced to the latest EvolutionX sources**
+- **PEP addon: Flash Notify** — Update and add more futures.
+- **Update BakaSU Manager to stable release**.
+- Fix auto remove bakasu
+- Big update and redisignand fixes Pixel Extra Parts
+
+## 12.3 — 31/10/2026
 
 - **OrangeFox updated**: ver beta 2 patch 1
 - **Base synced to the latest EvolutionX sources**
@@ -25,9 +31,6 @@
 
 ## 12.3 — 24/10/2026
 
-> For normal users: October blobs and kernel, secure Face Unlock,
-> faster recovery install. Update over the previous 12.3 without wipe.
-
 - **Stock blobs updated to CP3A.261005.005** (akita/husky/shiba):
   October vendor security patch and firmware from the stock images.
 - **Kernel raised 6.1.157 → 6.1.162**, build matched to the October
@@ -42,10 +45,6 @@
 - Base synced to the latest EvolutionX sources.
 
 ## 12.3 — 20/10/2026
-
-> For normal users: root manager installs by itself with no failures,
-> Data format in recovery fixed, two new PEP addons. Update over 12.3
-> without wipe.
 
 - **reSukiSU manager install fixed — works 100%**: the installer now runs
   in the KSU kernel context, so it starts on every boot with no SELinux
@@ -68,9 +67,6 @@
   default; the rest are opt-in toggles.
 
 ## 12.3 — 15/10/2026
-
-> For normal users: October security, updater installs the root manager app
-> by itself, shade zoom fixed, full translations. Update over 12.2 without wipe.
 
 - Base synced to the latest EvolutionX source. October Android security patch.
   Vendor & boot security patches unchanged.
