@@ -1,0 +1,24 @@
+{
+  "response": [
+    {
+      "maintainer": "leegar",
+      "buildtype": "user",
+      "filename": "EvolutionX-11.0-20261115-shiba-Unofficial.zip",
+      "download": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part00",
+      "parts": [
+        "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part00",
+        "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part01",
+        "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part02"
+      ],
+      "sha256": "b73c8fd6243304b16ef134917db6f0c2e724c1252e6a08d2430cf5e6b94a7694",
+      "md5": "b48848b365b3bde178b886108b7191b8",
+      "size": 3488850308,
+      "timestamp": 1794974932,
+      "version": "12.4s",
+      "os_patch_level": "2026-11-05",
+      "forum": "https://t.me/...",
+      "firmware": "",
+      "paypal": ""
+    }
+  ]
+}
