@@ -62,7 +62,7 @@
       "timestamp": 1794974932,
       "os_sdk_level": 36,
       "os_patch_level": "2026-11-05",
-      "changelog": "# Evolution X 12.4s\n\n![Release Banner](https://media1.tenor.com/m/hmr48pH9IlAAAAAC/crazy-stupid-love-steve-carell.gif)\n\n## Основные изменения\n- Обновлён **Security Patch** до ноября 2026\n- Добавлен реворк Updater с `Split SHA-256` и параллельной загрузкой\n- Исправлены микрофризы в лаунчере\n\n> Перед установкой поверх другой ветки рекомендуется сделать бэкап.\n\n```bash\nadb sideload EvolutionX-11.0-20261115-shiba-Unofficial.zip\n```",
+      "changelog": "# Evolution X 12.4s\n\n![Release Banner](https://c.tenor.com/hmr48pH9IlAAAAAC/tenor.gif)\n\n## Основные изменения\n- Обновлён **Security Patch** до ноября 2026\n- Добавлен реворк Updater с `Split SHA-256` и параллельной загрузкой\n- Исправлены микрофризы в лаунчере\n\n> Перед установкой поверх другой ветки рекомендуется сделать бэкап.\n\n```bash\nadb sideload EvolutionX-11.0-20261115-shiba-Unofficial.zip\n```",
       "links": [
         {
           "title": "GitHub Release",
