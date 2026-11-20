@@ -1,24 +1,131 @@
 {
+  "project": {
+    "name": "Evolution X • Shiba",
+    "tagline": "Custom builds with PEP & Extended OTA",
+    "description": "Неофициальные сборки **Evolution X** для Pixel 8 (`shiba`).\n\n- Оптимизированное ядро и фиксы\n- Поддержка **Split OTA** с проверкой SHA-256 каждой части",
+    "maintainer": "leegar",
+    "logo": {
+      "url": "https://example.com/assets/project_logo.gif",
+      "type": "auto",
+      "aspect_ratio": 3.2,
+      "loop": true
+    },
+    "links": [
+      {
+        "title": "Telegram",
+        "url": "https://t.me/...",
+        "icon": "telegram"
+      },
+      {
+        "title": "GitHub",
+        "url": "https://github.com/leegarchat/device_google_build",
+        "icon": "github"
+      },
+      {
+        "title": "Forum",
+        "url": "https://4pda.to/...",
+        "icon": "forum"
+      },
+      {
+        "title": "Donate",
+        "url": "https://example.com/donate",
+        "icon": "donate"
+      }
+    ]
+  },
   "response": [
     {
+      "id": "evox-12.4s-20261115-gapps",
       "maintainer": "leegar",
       "buildtype": "user",
+      "tag": "GApps • Split",
+      "version": "12.4s",
       "filename": "EvolutionX-11.0-20261115-shiba-Unofficial.zip",
       "download": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part00",
       "parts": [
-        "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part00",
-        "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part01",
-        "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part02"
+        {
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part00",
+          "sha256": "a6c8105dce0786bab5a8854a11c38225083d569a6d8e599c54bc1d0065f50c94"
+        },
+        {
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part01",
+          "sha256": "c4be9bd1f4b97c6653f61d80940e9b8a82ff0d24943f6f1b445c34d8ba8df39e"
+        },
+        {
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part02",
+          "sha256": "da6eb3c3b30f7b571f23fdf3ac613c6210099707f80c8e267793a0271a962fcd"
+        }
       ],
       "sha256": "b73c8fd6243304b16ef134917db6f0c2e724c1252e6a08d2430cf5e6b94a7694",
       "md5": "b48848b365b3bde178b886108b7191b8",
       "size": 3488850308,
       "timestamp": 1794974932,
-      "version": "12.4s",
+      "os_sdk_level": 36,
       "os_patch_level": "2026-11-05",
+      "changelog": "# Evolution X 12.4s\n\n![Release Banner](https://example.com/screenshots/release_12_4s.webp)\n\n## Основные изменения\n- Обновлён **Security Patch** до ноября 2026\n- Добавлен реворк Updater с `Split SHA-256` и параллельной загрузкой\n- Исправлены микрофризы в лаунчере\n\n> Перед установкой поверх другой ветки рекомендуется сделать бэкап.\n\n```bash\nadb sideload EvolutionX-11.0-20261115-shiba-Unofficial.zip\n```",
+      "links": [
+        {
+          "title": "GitHub Release",
+          "url": "https://github.com/leegarchat/device_google_build/releases/tag/test",
+          "icon": "github"
+        },
+        {
+          "title": "Mirror",
+          "url": "https://example.com/mirror/12.4s",
+          "icon": "mirror"
+        }
+      ],
       "forum": "https://t.me/...",
       "firmware": "",
       "paypal": ""
+    },
+    {
+      "id": "evox-12.4s-20261115-vanilla",
+      "maintainer": "leegar",
+      "buildtype": "userdebug",
+      "tag": "Vanilla • Beta",
+      "version": "12.4s Vanilla",
+      "filename": "EvolutionX-11.0-20261115-shiba-Vanilla.zip",
+      "download": "https://example.com/releases/EvolutionX-11.0-20261115-shiba-Vanilla.zip",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000001",
+      "size": 2147483648,
+      "timestamp": 1794974932,
+      "os_sdk_level": 36,
+      "os_patch_level": "2026-11-05",
+      "changelog_url": "https://raw.githubusercontent.com/leegarchat/device_google_build/lineage-24.0-leegar-evox/OTA/changelog_vanilla.md",
+      "links": [
+        {
+          "title": "Kernel Source",
+          "url": "https://github.com/leegarchat/...",
+          "icon": "device"
+        }
+      ]
+    },
+    {
+      "id": "evox-12.3-20261010-stable",
+      "maintainer": "leegar",
+      "buildtype": "user",
+      "tag": "Archive • Stable",
+      "version": "12.3",
+      "filename": "EvolutionX-11.0-20261010-shiba-Unofficial.zip",
+      "parts": [
+        {
+          "url": "https://example.com/releases/12.3/rom.zip.part00",
+          "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+          "size": 1073741824
+        },
+        {
+          "url": "https://example.com/releases/12.3/rom.zip.part01",
+          "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+          "size": 985661440
+        }
+      ],
+      "sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "size": 2059403264,
+      "timestamp": 1791590400,
+      "os_sdk_level": 36,
+      "os_patch_level": "2026-10-05",
+      "changelog": "## Evolution X 12.3\nПредыдущая стабильная сборка (доступна для отката при включённом **Unsafe Mode**)."
     }
   ]
 }
