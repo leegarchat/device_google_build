@@ -40,6 +40,7 @@
       "buildtype": "user",
       "tag": "GApps • Split",
       "version": "12.4s",
+      "ico_banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaHiB2vDbWwJJEF1e2WPl7zF8SjQYVRVUKAoGmu7r2nX76soeiXrMUkkVQ&s=10",
       "filename": "EvolutionX-11.0-20261115-shiba-Unofficial.zip",
       "download": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part00",
       "parts": [
@@ -108,6 +109,7 @@
       "buildtype": "user",
       "tag": "Archive • Stable",
       "version": "12.3",
+      "ico_banner": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100\" height=\"100\"><ellipse cx=\"22\" cy=\"72\" rx=\"10\" ry=\"5\" fill=\"#4CAF50\" transform=\"rotate(-30 22 72)\"/><ellipse cx=\"78\" cy=\"72\" rx=\"10\" ry=\"5\" fill=\"#4CAF50\" transform=\"rotate(30 78 72)\"/><path d=\"M10 52 C 25 35, 38 38, 50 48 C 62 38, 75 35, 90 52 C 75 58, 62 59, 50 57 C 38 59, 25 58, 10 52 Z\" fill=\"#D81B60\"/><path d=\"M14 55 C 30 78, 70 78, 86 55 C 70 62, 60 63, 50 62 C 40 63, 30 62, 14 55 Z\" fill=\"#EC407A\"/><ellipse cx=\"38\" cy=\"65\" rx=\"8\" ry=\"3\" fill=\"#F8BBD0\" opacity=\"0.8\"/><g transform=\"translate(76 32)\"><circle cx=\"0\" cy=\"-6\" r=\"4.5\" fill=\"#FF80AB\"/><circle cx=\"5.7\" cy=\"-1.85\" r=\"4.5\" fill=\"#FF80AB\"/><circle cx=\"3.53\" cy=\"4.85\" r=\"4.5\" fill=\"#FF80AB\"/><circle cx=\"-3.53\" cy=\"4.85\" r=\"4.5\" fill=\"#FF80AB\"/><circle cx=\"-5.7\" cy=\"-1.85\" r=\"4.5\" fill=\"#FF80AB\"/><circle cx=\"0\" cy=\"0\" r=\"3.2\" fill=\"#FFEB3B\"/></g><g transform=\"translate(24 32) scale(0.85)\"><circle cx=\"0\" cy=\"-6\" r=\"4.5\" fill=\"#CE93D8\"/><circle cx=\"5.7\" cy=\"-1.85\" r=\"4.5\" fill=\"#CE93D8\"/><circle cx=\"3.53\" cy=\"4.85\" r=\"4.5\" fill=\"#CE93D8\"/><circle cx=\"-3.53\" cy=\"4.85\" r=\"4.5\" fill=\"#CE93D8\"/><circle cx=\"-5.7\" cy=\"-1.85\" r=\"4.5\" fill=\"#CE93D8\"/><circle cx=\"0\" cy=\"0\" r=\"3.2\" fill=\"#FFF176\"/></g><g transform=\"translate(50 38) scale(0.6)\"><circle cx=\"0\" cy=\"-6\" r=\"4.5\" fill=\"#81D4FA\"/><circle cx=\"5.7\" cy=\"-1.85\" r=\"4.5\" fill=\"#81D4FA\"/><circle cx=\"3.53\" cy=\"4.85\" r=\"4.5\" fill=\"#81D4FA\"/><circle cx=\"-3.53\" cy=\"4.85\" r=\"4.5\" fill=\"#81D4FA\"/><circle cx=\"-5.7\" cy=\"-1.85\" r=\"4.5\" fill=\"#81D4FA\"/><circle cx=\"0\" cy=\"0\" r=\"3.2\" fill=\"white\"/></g></svg>",
       "banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsfgmQwxxuI7e06kIl7E1sNN08wITGltKSN5jTqeXvcxjqMdDvHv2ai9I&s=10",
       "filename": "EvolutionX-11.0-20261010-shiba-Unofficial.zip",
       "parts": [
