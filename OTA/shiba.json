@@ -39,7 +39,7 @@
   },
   "response": [
     {
-      "changelog": "# Evolution X 12.4s\n\n![Release Banner](https://c.tenor.com/hmr48pH9IlAAAAAC/tenor.gif)\n\n## Основные изменения\n### Вложенные стили и `snake_case_name`\n\nПроверка: ***жирный+курсив***, **жирный с `кодом` и *курсивом* внутри**, [**жирная** ~~ссылка~~](https://example.com), экранирование \\*звёздочек\\*, автоссылка ([https://en.wikipedia.org/wiki/Android_(operating_system](https://en.wikipedia.org/wiki/Android_(operating_system))).<br>Перенос через HTML br.\n\n- [x] Рекурсивный инлайн-парсер\n- [x] Таблицы с горизонтальным скроллом\n- [ ] Тест на планшете в ландшафте\n\n| Компонент | Версия | Статус | Подробное примечание для проверки горизонтального скролла |\n| :--- | :---: | ---: | :--- |\n| **Kernel** | `6.1.99` | OK | Обновлён с `LTO=thin` и фиксом сна |\n| *Vendor* | `AP4A.2611` | OK | Блобы от **ноября 2026** |\n| ~~Legacy~~ | `old` | Removed | Удалено в пользу нового стека |\n\n> Многострочная цитата с ***жирным курсивом*** и `inline code`.\n> Вторая строка цитаты.\n\n```bash\nadb sideload EvolutionX-11.0-20261115-shiba-Unofficial.zip --very-long-flag-to-test-horizontal-scroll-and-fade-indicator=true\n```",
+      "changelog_url": "https://github.com/leegarchat/device_google_build/raw/refs/heads/lineage-24.0-leegar-evox/docs/en/CHANGELOG.md",
       "links": [
         {
           "title": "Source zuma",

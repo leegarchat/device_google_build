@@ -5,6 +5,30 @@
 > One section per build, newest on top. A new build = new section here,
 > old ones stay untouched.
 
+## 12.4 — 22/11/2026
+
+- **BakaSU manager updated to 35262**
+  ([download](https://nightly.link/Baka-SU/BakaSU/workflows/build-manager/main))
+- **WildKSU kernel updated to r23**
+  ([download](https://github.com/WildKernels/GKI_KernelSU_SUSFS/releases/tag/r23))
+- **Base synced to the latest EvolutionX sources**
+- **New built-in LeeGarUpdater** — split-archive downloads with per-part
+  SHA-256, deep theme tuning via JSON, plus unsafe extras (flash the ROM
+  via recovery, allow downgrade / ROM change)
+- **OTA is back starting with this release**: hosting limits solved by
+  splitting files on the GitHub release page, and the new Updater knows
+  how to reassemble split archives
+- **PEP: Addons hub fully redesigned** — new look and flow for the whole
+  module manager
+- **PEP: Xposed/LSPosed/Vector modules now work as plain APKs** — no
+  manager app needed. You can still install Vector system-wide for full
+  integration; it coexists fine with JAR addons, but for safe APK-module
+  use turn on the force-Vector switch in PEP addons so dispatch isn't
+  doubled
+- **PEP addon: Flash Notify is off by default**
+- **PEP: new biometric face addon** — restyled face-unlock prompt, plus
+  tap the face icon to skip straight to fingerprint
+
 ## 12.4 — 15/11/2026
 
 - **OrangeFox**: Updated
