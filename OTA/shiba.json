@@ -2,33 +2,27 @@
   "project": {
     "name": "Evolution X • Shiba",
     "tagline": "Custom builds with PEP & Extended OTA",
-    "description": "Неофициальные сборки **Evolution X** для Pixel 8 (`shiba`).\n\n- Оптимизированное ядро и фиксы\n- Поддержка **Split OTA** с проверкой SHA-256 каждой части",
-    "maintainer": "leegar",
-    "logo": {
-      "url": "https://github.com/leegarchat/device_google_build/blob/lineage-24.0-leegar-evox/pics/evox_22.11.png?raw=true",
-      "type": "auto",
-      "aspect_ratio": 3.2,
-      "loop": true
-    },
+    "description": "Unofficial **Evolution X** builds for Pixel 8 (`shiba`).\n\n- WildKSU kernel with BakaSU\n- Built-in BakaSU manager\n- Tons of custom settings\n- Support for Vector/LSPosed modules\n- Built-in addons based on LSPosed/Xposed",
+    "maintainer": "LeeGarChat",
     "links": [
       {
-        "title": "Telegram",
-        "url": "https://t.me/...",
+        "title": "Telegram Channel",
+        "url": "https://t.me/EvoX_LeeGarChat",
         "icon": "telegram"
       },
       {
-        "title": "GitHub",
-        "url": "https://github.com/leegarchat/device_google_build",
-        "icon": "github"
+        "title": "Telegram Chat",
+        "url": "https://t.me/LeeGarChatEvox",
+        "icon": "telegram"
       },
       {
-        "title": "Forum",
-        "url": "https://4pda.to/...",
-        "icon": "forum"
+        "title": "Donate Telegram Tribute",
+        "url": "https://t.me/tribute/app?startapp=ep_7qoBtdQOGgN4By7VFlvI65Mmc1EnWsOMLkbbgYXZSkqxCuqBNQ",
+        "icon": "donate"
       },
       {
-        "title": "Donate",
-        "url": "https://example.com/donate",
+        "title": "Donate Boosty",
+        "url": "https://boosty.to/leegar/donate",
         "icon": "donate"
       }
     ]
