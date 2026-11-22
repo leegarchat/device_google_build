@@ -34,6 +34,11 @@
         "title": "Pixel Extra Parts GitHub",
         "url": "https://github.com/leegarchat/PixelExtraParts",
         "icon": "github"
+      },
+      {
+        "title": "This Updater GitHub",
+        "url": "https://github.com/leegarchat/LeeGarUpdater",
+        "icon": "github"
       }
     ]
   },
