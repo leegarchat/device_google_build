@@ -1,0 +1,101 @@
+{
+  "project": {
+    "name": "Evolution X • Akita",
+    "tagline": "Custom builds with PEP & Extended OTA",
+    "description": "Unofficial **Evolution X** builds for Pixel 8a (`akita`).\n\n- WildKSU kernel with BakaSU\n- Built-in BakaSU manager\n- Tons of custom settings\n- Support for Vector/LSPosed modules\n- Built-in addons based on LSPosed/Xposed",
+    "maintainer": "LeeGarChat",
+    "links": [
+      {
+        "title": "Telegram Channel",
+        "url": "https://t.me/EvoX_LeeGarChat",
+        "icon": "telegram"
+      },
+      {
+        "title": "Telegram Chat",
+        "url": "https://t.me/LeeGarChatEvox",
+        "icon": "telegram"
+      },
+      {
+        "title": "Donate Telegram Tribute",
+        "url": "https://t.me/tribute/app?startapp=ep_7qoBtdQOGgN4By7VFlvI65Mmc1EnWsOMLkbbgYXZSkqxCuqBNQ",
+        "icon": "donate"
+      },
+      {
+        "title": "Donate Boosty",
+        "url": "https://boosty.to/leegar/donate",
+        "icon": "donate"
+      },
+      {
+        "title": "OrangeFox",
+        "url": "https://github.com/leegarchat/twrp_device_google_pixels/releases",
+        "icon": "download"
+      },
+      {
+        "title": "Pixel Extra Parts GitHub",
+        "url": "https://github.com/leegarchat/PixelExtraParts",
+        "icon": "github"
+      }
+    ]
+  },
+  "response": [
+    {
+      "changelog_url": "https://github.com/leegarchat/device_google_build/raw/refs/heads/lineage-24.0-leegar-evox/docs/en/CHANGELOG.md",
+      "links": [
+        {
+          "title": "Source zuma",
+          "url": "https://github.com/leegarchat/android_device_google_zuma/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Source shusky",
+          "url": "https://github.com/leegarchat/android_device_google_akita/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Source shiba",
+          "url": "https://github.com/leegarchat/proprietary_vendor_google_akita/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Mirror GDrive",
+          "url": "https://example.com/mirror/12.4s",
+          "icon": "mirror"
+        }
+      ],
+      "maintainer": "LeeGarChat",
+      "banner": "https://github.com/leegarchat/device_google_build/blob/lineage-24.0-leegar-evox/pics/evox_22.11.png?raw=true",
+      "tag": "GApps",
+      "id": "EvolutionX-17.0-20261122-akita-12.4-Unofficial",
+      "buildtype": "user",
+      "version": "EvolutionX 12.4",
+      "filename": "EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip",
+      "timestamp": 1795325244,
+      "md5": "00a4544aeb65ebf41ed0b77d85e0d78a",
+      "sha256": "c9e8a9158277f9c5525988709343c37f4984630929c6933822f1c527e7c7c06f",
+      "size": 3453481888,
+      "os_sdk_level": 37,
+      "os_patch_level": "2026-11-01",
+      "download": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part00",
+      "parts": [
+        {
+          "name": "EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part00",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part00",
+          "size": 1288490188,
+          "sha256": "d963cd8d046efcbe1c58eb26d71e28f3d0b25b78589b3c0f0b99856294d7390c"
+        },
+        {
+          "name": "EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part01",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part01",
+          "size": 1288490188,
+          "sha256": "b421533c870927a4408da32d4d84c5084f18aa5fdb318dd27bf7154931bb43bc"
+        },
+        {
+          "name": "EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part02",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part02",
+          "size": 876501512,
+          "sha256": "a405fc297c56692ea39f69d52534ef6e715c41eae1d73846018295ed676d9256"
+        }
+      ]
+    }
+  ]
+}
