@@ -1,6 +1,6 @@
 # Changelog
 
-**English** | [Русский](../ru/CHANGELOG.md)
+**English** | [Русский](https://github.com/leegarchat/device_google_build/blob/lineage-24.0-leegar-evox/docs/ru/CHANGELOG.md)
 
 > One section per build, newest on top. A new build = new section here,
 > old ones stay untouched.
