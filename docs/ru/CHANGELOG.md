@@ -7,10 +7,8 @@
 
 ## 12.4 — 22/11/2026
 
-- **Менеджер BakaSU обновлён до 35262**
-  ([скачать](https://nightly.link/Baka-SU/BakaSU/workflows/build-manager/main))
-- **Ядро WildKSU обновлено до r23**
-  ([скачать](https://github.com/WildKernels/GKI_KernelSU_SUSFS/releases/tag/r23))
+- **Менеджер BakaSU обновлён до 35262** ([скачать](https://nightly.link/Baka-SU/BakaSU/workflows/build-manager/main))
+- **Ядро WildKSU обновлено до r23** ([скачать](https://github.com/WildKernels/GKI_KernelSU_SUSFS/releases/tag/r23))
 - **База синхронизирована со свежими исходниками EvolutionX**
 - **Новый встроенный LeeGarUpdater** — докачка сплит-архивов с проверкой
   SHA-256 каждой части, тонкая настройка оформления через JSON, плюс
@@ -30,6 +28,7 @@
 - **PEP: новый аддон биометрии лица** — переоформленный промпт
   разблокировки лицом, плюс тап по иконке лица сразу переключает
   на отпечаток
+- OrangeFox: Обновлен до Beta 3 Patch 1
 
 ## 12.4 — 15/11/2026
 

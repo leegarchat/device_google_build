@@ -7,10 +7,8 @@
 
 ## 12.4 — 22/11/2026
 
-- **BakaSU manager updated to 35262**
-  ([download](https://nightly.link/Baka-SU/BakaSU/workflows/build-manager/main))
-- **WildKSU kernel updated to r23**
-  ([download](https://github.com/WildKernels/GKI_KernelSU_SUSFS/releases/tag/r23))
+- **BakaSU manager updated to 35262** ([download](https://nightly.link/Baka-SU/BakaSU/workflows/build-manager/main))
+- **WildKSU kernel updated to r23** ([download](https://github.com/WildKernels/GKI_KernelSU_SUSFS/releases/tag/r23))
 - **Base synced to the latest EvolutionX sources**
 - **New built-in LeeGarUpdater** — split-archive downloads with per-part
   SHA-256, deep theme tuning via JSON, plus unsafe extras (flash the ROM
@@ -28,6 +26,7 @@
 - **PEP addon: Flash Notify is off by default**
 - **PEP: new biometric face addon** — restyled face-unlock prompt, plus
   tap the face icon to skip straight to fingerprint
+- OrangeFox: Updatet to Beta 3 Patch 1
 
 ## 12.4 — 15/11/2026
 
