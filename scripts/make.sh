@@ -433,6 +433,102 @@ PYEOF
         "$RELEASE_DIR"/vbmeta_vendor.img 2>/dev/null || true
 fi
 
+# ============================================================
+# 8. Пост-обработка: сплит ZIP + LeeGarUpdater JSON (всегда)
+# ============================================================
+# - Режет итоговый ZIP на части лимитом 1.2 GiB прямо в
+#   out/target/product/<device>/ (rom.zip.part00, .part01, ...).
+# - Дополняет out/.../<device>.json под LeeGarUpdater: id (если нет),
+#   os_sdk_level / os_patch_level из build.prop (если нет),
+#   parts [{name, url, size, sha256}] (url пустые — вставить вручную).
+#   Никаких ссылок: только инфо по рому (версия, API, патч) + хэши.
+#   Отдельных флагов не требует.
+OUT_DEV_DIR="out/target/product/$DEVICE_CODE"
+ZIP_FOR_SPLIT=$(ls -t "$OUT_DEV_DIR"/*.zip 2>/dev/null | head -n 1)
+if [ -z "$ZIP_FOR_SPLIT" ]; then
+    echo -e "${CLR_DIM}-- Пост-обработка пропущена: ZIP не найден (вероятно, сборка модуля через -a).${CLR_RESET}"
+else
+    SPLIT_LIMIT=1288490188  # 1.2 GiB в байтах
+    SPLIT_PREFIX="${ZIP_FOR_SPLIT}.part"
+    ZIP_SIZE=$(stat -c%s "$ZIP_FOR_SPLIT")
+
+    echo -e "${CLR_CYAN}=== SPLIT: нарезка $(basename "$ZIP_FOR_SPLIT") (лимит 1.2 GiB) ===${CLR_RESET}"
+    rm -f "${SPLIT_PREFIX}"*
+    PARTS_MANIFEST=$(mktemp)
+
+    if [ "$ZIP_SIZE" -gt "$SPLIT_LIMIT" ]; then
+        split -b "$SPLIT_LIMIT" -d "$ZIP_FOR_SPLIT" "$SPLIT_PREFIX"
+        for part in "${SPLIT_PREFIX}"*; do
+            [ -f "$part" ] || continue
+            echo "$(basename "$part")|$(stat -c%s "$part")|$(sha256sum "$part" | cut -d' ' -f1)" >> "$PARTS_MANIFEST"
+        done
+        echo -e "  ${CLR_GREEN}Частей:${CLR_RESET} $(wc -l < "$PARTS_MANIFEST")"
+    else
+        echo -e "  ${CLR_DIM}Файл меньше лимита — нарезка не требуется.${CLR_RESET}"
+    fi
+
+    # os_sdk_level / os_patch_level из собранного build.prop
+    OS_SDK_LEVEL=""
+    OS_PATCH_LEVEL=""
+    for bp in "$OUT_DEV_DIR/system/build.prop" "$OUT_DEV_DIR/system_ext/build.prop" "$OUT_DEV_DIR/vendor/build.prop"; do
+        [ -f "$bp" ] || continue
+        [ -z "$OS_SDK_LEVEL" ] && OS_SDK_LEVEL=$(grep -m1 '^ro.build.version.sdk=' "$bp" 2>/dev/null | cut -d= -f2)
+        [ -z "$OS_PATCH_LEVEL" ] && OS_PATCH_LEVEL=$(grep -m1 '^ro.build.version.security_patch=' "$bp" 2>/dev/null | cut -d= -f2)
+    done
+
+    JSON_OUT="$OUT_DEV_DIR/${DEVICE_CODE}.json"
+    if [ -f "$JSON_OUT" ]; then
+        echo -e "  ${CLR_GREEN}Дополнение Updater JSON:${CLR_RESET} $(basename "$JSON_OUT")"
+        python3 - "$JSON_OUT" "$PARTS_MANIFEST" "$OS_SDK_LEVEL" "$OS_PATCH_LEVEL" <<'PYEOF'
+import json, sys
+
+dst, manifest, os_sdk, os_patch = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+with open(dst, 'r', encoding='utf-8') as f:
+    data = json.load(f)
+
+resp = data['response'][0]
+
+# id по имени файла, если отсутствует (фолбэк апдейтера: id -> sha256 -> filename_timestamp)
+if not resp.get('id'):
+    fn = resp.get('filename', '')
+    resp['id'] = fn[:-4] if fn.endswith('.zip') else fn
+
+# Инфо по рому из build.prop (не перезаписывать уже заполненное)
+if os_sdk.isdigit() and not resp.get('os_sdk_level'):
+    resp['os_sdk_level'] = int(os_sdk)
+if os_patch and not resp.get('os_patch_level'):
+    resp['os_patch_level'] = os_patch
+
+parts = []
+try:
+    with open(manifest, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            name, size, sha256 = line.split('|')
+            parts.append({
+                'name': name,
+                'url': '',  # <-- вставить вручную
+                'size': int(size),
+                'sha256': sha256,
+            })
+except FileNotFoundError:
+    pass
+
+resp['parts'] = parts
+
+with open(dst, 'w', encoding='utf-8') as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+print('OK, parts:', len(parts))
+PYEOF
+        echo -e "  ${CLR_GREEN}✓ Updater JSON дополнен (id, os, parts)${CLR_RESET}"
+    else
+        echo -e "${CLR_YELLOW}⚠ Updater JSON не найден ($JSON_OUT), пропуск.${CLR_RESET}"
+    fi
+    rm -f "$PARTS_MANIFEST"
+fi
+
 # Корректный выход: return для source, exit для прямого запуска
 if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
     return 0
