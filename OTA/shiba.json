@@ -24,106 +24,78 @@
         "title": "Donate Boosty",
         "url": "https://boosty.to/leegar/donate",
         "icon": "donate"
+      },
+      {
+        "title": "OrangeFox",
+        "url": "https://github.com/leegarchat/twrp_device_google_pixels/releases",
+        "icon": "download"
+      },
+      {
+        "title": "Pixel Extra Parts GitHub",
+        "url": "https://github.com/leegarchat/PixelExtraParts",
+        "icon": "github"
       }
     ]
   },
   "response": [
     {
-      "id": "evox-12.4s-20261115-gapps",
-      "maintainer": "leegar",
-      "buildtype": "user",
-      "tag": "GApps • Split",
-      "version": "12.4s",
-      "ico_banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaHiB2vDbWwJJEF1e2WPl7zF8SjQYVRVUKAoGmu7r2nX76soeiXrMUkkVQ&s=10",
-      "filename": "EvolutionX-11.0-20261115-shiba-Unofficial.zip",
-      "download": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part00",
-      "parts": [
-        {
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part00",
-          "sha256": "a6c8105dce0786bab5a8854a11c38225083d569a6d8e599c54bc1d0065f50c94"
-        },
-        {
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part01",
-          "sha256": "c4be9bd1f4b97c6653f61d80940e9b8a82ff0d24943f6f1b445c34d8ba8df39e"
-        },
-        {
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261115-shiba-12.4-Unofficial.zip.part02",
-          "sha256": "da6eb3c3b30f7b571f23fdf3ac613c6210099707f80c8e267793a0271a962fcd"
-        }
-      ],
-      "sha256": "b73c8fd6243304b16ef134917db6f0c2e724c1252e6a08d2430cf5e6b94a7694",
-      "md5": "b48848b365b3bde178b886108b7191b8",
-      "size": 3488850308,
-      "timestamp": 1794974932,
-      "os_sdk_level": 36,
-      "os_patch_level": "2026-11-05",
       "changelog": "# Evolution X 12.4s\n\n![Release Banner](https://c.tenor.com/hmr48pH9IlAAAAAC/tenor.gif)\n\n## Основные изменения\n### Вложенные стили и `snake_case_name`\n\nПроверка: ***жирный+курсив***, **жирный с `кодом` и *курсивом* внутри**, [**жирная** ~~ссылка~~](https://example.com), экранирование \\*звёздочек\\*, автоссылка ([https://en.wikipedia.org/wiki/Android_(operating_system](https://en.wikipedia.org/wiki/Android_(operating_system))).<br>Перенос через HTML br.\n\n- [x] Рекурсивный инлайн-парсер\n- [x] Таблицы с горизонтальным скроллом\n- [ ] Тест на планшете в ландшафте\n\n| Компонент | Версия | Статус | Подробное примечание для проверки горизонтального скролла |\n| :--- | :---: | ---: | :--- |\n| **Kernel** | `6.1.99` | OK | Обновлён с `LTO=thin` и фиксом сна |\n| *Vendor* | `AP4A.2611` | OK | Блобы от **ноября 2026** |\n| ~~Legacy~~ | `old` | Removed | Удалено в пользу нового стека |\n\n> Многострочная цитата с ***жирным курсивом*** и `inline code`.\n> Вторая строка цитаты.\n\n```bash\nadb sideload EvolutionX-11.0-20261115-shiba-Unofficial.zip --very-long-flag-to-test-horizontal-scroll-and-fade-indicator=true\n```",
       "links": [
         {
-          "title": "GitHub Release",
-          "url": "https://github.com/leegarchat/device_google_build/releases/tag/test",
+          "title": "GitHub Device Tree Zuma",
+          "url": "https://github.com/leegarchat/android_device_google_zuma/tree/lineage-24.0-leegar-evox-cp3a",
           "icon": "github"
         },
         {
-          "title": "Mirror",
+          "title": "GitHub Device Tree Shusky",
+          "url": "https://github.com/leegarchat/android_device_google_shusky/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "GitHub Vendor Tree Shiba",
+          "url": "https://github.com/leegarchat/proprietary_vendor_google_shiba/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Mirror GDrive",
           "url": "https://example.com/mirror/12.4s",
           "icon": "mirror"
         }
       ],
-      "forum": "https://t.me/...",
-      "firmware": "",
-      "paypal": ""
-    },
-    {
-      "id": "evox-12.4s-20261115-vanilla",
-      "maintainer": "leegar",
-      "buildtype": "userdebug",
-      "tag": "Vanilla • Beta",
-      "version": "12.4s Vanilla",
-      "banner": "https://media1.tenor.com/m/Xv92ltSnupgAAAAd/gosling-sad-gosling.gif",
-      "filename": "EvolutionX-11.0-20261115-shiba-Vanilla.zip",
-      "download": "https://example.com/releases/EvolutionX-11.0-20261115-shiba-Vanilla.zip",
-      "sha256": "0000000000000000000000000000000000000000000000000000000000000001",
-      "size": 2147483648,
-      "timestamp": 1794974932,
-      "os_sdk_level": 36,
-      "os_patch_level": "2026-11-05",
-      "changelog_url": "https://raw.githubusercontent.com/leegarchat/device_google_build/lineage-24.0-leegar-evox/OTA/changelog_vanilla.md",
-      "links": [
-        {
-          "title": "Kernel Source",
-          "url": "https://github.com/leegarchat/...",
-          "icon": "device"
-        }
-      ]
-    },
-    {
-      "id": "evox-12.3-20261010-stable",
-      "maintainer": "leegar",
+      "maintainer": "LeeGarChat",
+      "banner": "https://github.com/leegarchat/device_google_build/blob/lineage-24.0-leegar-evox/pics/evox_22.11.png?raw=true",
+      "tag": "GApps",
+      "id": "20261122",
       "buildtype": "user",
-      "tag": "Archive • Stable",
-      "version": "12.3",
-      "ico_banner": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100\" height=\"100\"><ellipse cx=\"22\" cy=\"72\" rx=\"10\" ry=\"5\" fill=\"#4CAF50\" transform=\"rotate(-30 22 72)\"/><ellipse cx=\"78\" cy=\"72\" rx=\"10\" ry=\"5\" fill=\"#4CAF50\" transform=\"rotate(30 78 72)\"/><path d=\"M10 52 C 25 35, 38 38, 50 48 C 62 38, 75 35, 90 52 C 75 58, 62 59, 50 57 C 38 59, 25 58, 10 52 Z\" fill=\"#D81B60\"/><path d=\"M14 55 C 30 78, 70 78, 86 55 C 70 62, 60 63, 50 62 C 40 63, 30 62, 14 55 Z\" fill=\"#EC407A\"/><ellipse cx=\"38\" cy=\"65\" rx=\"8\" ry=\"3\" fill=\"#F8BBD0\" opacity=\"0.8\"/><g transform=\"translate(76 32)\"><circle cx=\"0\" cy=\"-6\" r=\"4.5\" fill=\"#FF80AB\"/><circle cx=\"5.7\" cy=\"-1.85\" r=\"4.5\" fill=\"#FF80AB\"/><circle cx=\"3.53\" cy=\"4.85\" r=\"4.5\" fill=\"#FF80AB\"/><circle cx=\"-3.53\" cy=\"4.85\" r=\"4.5\" fill=\"#FF80AB\"/><circle cx=\"-5.7\" cy=\"-1.85\" r=\"4.5\" fill=\"#FF80AB\"/><circle cx=\"0\" cy=\"0\" r=\"3.2\" fill=\"#FFEB3B\"/></g><g transform=\"translate(24 32) scale(0.85)\"><circle cx=\"0\" cy=\"-6\" r=\"4.5\" fill=\"#CE93D8\"/><circle cx=\"5.7\" cy=\"-1.85\" r=\"4.5\" fill=\"#CE93D8\"/><circle cx=\"3.53\" cy=\"4.85\" r=\"4.5\" fill=\"#CE93D8\"/><circle cx=\"-3.53\" cy=\"4.85\" r=\"4.5\" fill=\"#CE93D8\"/><circle cx=\"-5.7\" cy=\"-1.85\" r=\"4.5\" fill=\"#CE93D8\"/><circle cx=\"0\" cy=\"0\" r=\"3.2\" fill=\"#FFF176\"/></g><g transform=\"translate(50 38) scale(0.6)\"><circle cx=\"0\" cy=\"-6\" r=\"4.5\" fill=\"#81D4FA\"/><circle cx=\"5.7\" cy=\"-1.85\" r=\"4.5\" fill=\"#81D4FA\"/><circle cx=\"3.53\" cy=\"4.85\" r=\"4.5\" fill=\"#81D4FA\"/><circle cx=\"-3.53\" cy=\"4.85\" r=\"4.5\" fill=\"#81D4FA\"/><circle cx=\"-5.7\" cy=\"-1.85\" r=\"4.5\" fill=\"#81D4FA\"/><circle cx=\"0\" cy=\"0\" r=\"3.2\" fill=\"white\"/></g></svg>",
-      "banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsfgmQwxxuI7e06kIl7E1sNN08wITGltKSN5jTqeXvcxjqMdDvHv2ai9I&s=10",
-      "filename": "EvolutionX-11.0-20261010-shiba-Unofficial.zip",
+      "version": "EvolutionX 12.4",
+      "filename": "EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip",
+      "timestamp": 1795301132,
+      "md5": "2be4632e3174224735eae8b5c99ea220",
+      "sha256": "2849983cd7cc1384a56910ee7fa2b1abd3567aca8dae78d6ff4b0594b6257632",
+      "size": 3463675330,
+      "os_sdk_level": 37,
+      "os_patch_level": "2026-11-01",
+      "download": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part00",
       "parts": [
         {
-          "url": "https://example.com/releases/12.3/rom.zip.part00",
-          "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
-          "size": 1073741824
+          "name": "EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part00",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part00",
+          "size": 1288490188,
+          "sha256": "78a4c3a36a2ccbd80bb35da75f01438c37e12b306fd1aa3257bd57c06f0d47a6"
         },
         {
-          "url": "https://example.com/releases/12.3/rom.zip.part01",
-          "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
-          "size": 985661440
+          "name": "EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part01",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part01",
+          "size": 1288490188,
+          "sha256": "c2bac0f8eada6f7c5dc66001e350536cc1707a1aab81292d383cb5ae0911fc19"
+        },
+        {
+          "name": "EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part02",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/test/EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part02",
+          "size": 886694954,
+          "sha256": "98745a8a54a9253e192efe4be396ef06c4741d8d682096966a0088f66fb721fe"
         }
-      ],
-      "sha256": "3333333333333333333333333333333333333333333333333333333333333333",
-      "size": 2059403264,
-      "timestamp": 1791590400,
-      "os_sdk_level": 36,
-      "os_patch_level": "2026-10-05",
-      "changelog": "## Evolution X 12.3\nПредыдущая стабильная сборка (доступна для отката при включённом **Unsafe Mode**)."
+      ]
     }
   ]
 }
