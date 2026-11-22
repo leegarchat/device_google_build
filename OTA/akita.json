@@ -80,23 +80,23 @@
       "size": 3453481888,
       "os_sdk_level": 37,
       "os_patch_level": "2026-11-01",
-      "download": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part00",
+      "download": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part00",
       "parts": [
         {
           "name": "EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part00",
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part00",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part00",
           "size": 1288490188,
           "sha256": "d963cd8d046efcbe1c58eb26d71e28f3d0b25b78589b3c0f0b99856294d7390c"
         },
         {
           "name": "EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part01",
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part01",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part01",
           "size": 1288490188,
           "sha256": "b421533c870927a4408da32d4d84c5084f18aa5fdb318dd27bf7154931bb43bc"
         },
         {
           "name": "EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part02",
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part02",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part02",
           "size": 876501512,
           "sha256": "a405fc297c56692ea39f69d52534ef6e715c41eae1d73846018295ed676d9256"
         }

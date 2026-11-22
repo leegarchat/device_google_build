@@ -80,23 +80,23 @@
       "size": 3471813570,
       "os_sdk_level": 37,
       "os_patch_level": "2026-11-01",
-      "download": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-husky-12.4-Unofficial.zip.part00",
+      "download": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-husky-12.4-Unofficial.zip.part00",
       "parts": [
         {
           "name": "EvolutionX-17.0-20261122-husky-12.4-Unofficial.zip.part00",
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-husky-12.4-Unofficial.zip.part00",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-husky-12.4-Unofficial.zip.part00",
           "size": 1288490188,
           "sha256": "857bfd6dca631aa6dbb675e7c1ae08193c34679061786b45689135893250c695"
         },
         {
           "name": "EvolutionX-17.0-20261122-husky-12.4-Unofficial.zip.part01",
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-husky-12.4-Unofficial.zip.part01",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-husky-12.4-Unofficial.zip.part01",
           "size": 1288490188,
           "sha256": "b0ba8cb6c402f29f63f6ec08556461f01f90a90cb65a2210464d673e126bcec3"
         },
         {
           "name": "EvolutionX-17.0-20261122-husky-12.4-Unofficial.zip.part02",
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-husky-12.4-Unofficial.zip.part02",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-husky-12.4-Unofficial.zip.part02",
           "size": 894833194,
           "sha256": "1139bed4a96ceb76426aaf3e2ff88cc3ca978736047809e339cb8a6710b6a68e"
         }

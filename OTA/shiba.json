@@ -80,23 +80,23 @@
       "size": 3463675486,
       "os_sdk_level": 37,
       "os_patch_level": "2026-11-01",
-      "download": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part00",
+      "download": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part00",
       "parts": [
         {
           "name": "EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part00",
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part00",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part00",
           "size": 1288490188,
           "sha256": "da94ebf33ec93f29efb2b8c742c561bb93a3be1b21f70cb92be06fd25a7d7e48"
         },
         {
           "name": "EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part01",
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part01",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part01",
           "size": 1288490188,
           "sha256": "f52daa11545e24c3ff557c0e206dd6ac116d8d416243bdb4d954861bfb6c5cc3"
         },
         {
           "name": "EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part02",
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA/EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part02",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-shiba-12.4-Unofficial.zip.part02",
           "size": 886695110,
           "sha256": "ab2a671f305fd4b4c78af942ffe5502f0166796460272fe3cf564c9ee71c005c"
         }
