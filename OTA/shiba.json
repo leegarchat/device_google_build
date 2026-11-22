@@ -5,7 +5,7 @@
     "description": "Неофициальные сборки **Evolution X** для Pixel 8 (`shiba`).\n\n- Оптимизированное ядро и фиксы\n- Поддержка **Split OTA** с проверкой SHA-256 каждой части",
     "maintainer": "leegar",
     "logo": {
-      "url": "https://media1.tenor.com/m/58vmQoAtcaAAAAAC/what-what-steve-carell-idiot.gif",
+      "url": "https://github.com/leegarchat/device_google_build/blob/lineage-24.0-leegar-evox/pics/evox_22.11.png?raw=true",
       "type": "auto",
       "aspect_ratio": 3.2,
       "loop": true
