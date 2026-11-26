@@ -627,7 +627,9 @@ if not resp_list:
     die('пустой response в %s' % ota_json)
 tpl = dict(resp_list[0])
 tagval = cli_tag if cli_tag else tpl.get('tag', 'GApps')
-teg_rel = '%s-%s-%s' % (os.path.basename(zip_path)[:-4], time_hms, tagval)
+# GitHub-тег без пробелов, в OTA JSON tag пишется как есть
+gh_tag = tagval.replace(' ', '_')
+teg_rel = '%s-%s-%s' % (os.path.basename(zip_path)[:-4], time_hms, gh_tag)
 
 # --- ассеты: сплиты + sha256sum рядом ---
 def file_hashes(p, algos=('md5', 'sha256')):
