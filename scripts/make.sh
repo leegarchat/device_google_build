@@ -47,6 +47,9 @@ BUILD_TYPE="userdebug"
 DEVICE_CODE=""
 DO_RELEASE=false
 CUSTOM_RELEASE_PATH=""
+DO_GH_RELEASE=false
+BUILD_TAG=""
+WITH_MANAGER=false
 MODIFY_JSON=false
 CLEAN_DEVICE=false
 CLEAN_OUT=false
@@ -145,6 +148,9 @@ show_help() {
     echo -e "  -e, --env               Принудительно перезапустить 'source build/envsetup.sh'."
     echo -e "  -l, --lunch             Принудительно перезапустить 'lunch'."
     echo -e "  -r, --release [path]    Экспортировать готовые артефакты в релизную папку."
+    echo -e "  -R, --github-release  Залить сплиты в GitHub-релиз + обновить OTA JSON + архив в build/OTA/files/."
+    echo -e "  -T, --tag <tag>       Тег сборки: response.tag в OTA JSON и суффикс тега GitHub-релиза."
+    echo -e "  -M, --manager         Встроить SukiSU-менеджер (только для ksu-ядер, второй гейт)."
     echo -e "  -J, --json              Сформировать и модифицировать OTA JSON при релизе."
     echo -e "  -c, --clean-device      Удалить out/target/product/<device> перед сборкой."
     echo -e "  -C, --clean-out         Снести out/ целиком перед сборкой."
@@ -216,6 +222,15 @@ while [[ $# -gt 0 ]] && [ "$SAFE_EXIT_REQUESTED" = false ]; do
             fi
             ;;
         -J|--json) MODIFY_JSON=true; shift ;;
+        -R|--github-release) DO_GH_RELEASE=true; shift ;;
+        -M|--manager) WITH_MANAGER=true; shift ;;
+        -T|--tag)
+            if [ -n "$2" ] && [[ "$2" != -* ]]; then
+                BUILD_TAG="$2"; shift 2
+            else
+                echo -e "${CLR_RED}❌ Ошибка: -T/--tag требует значения${CLR_RESET}"; safe_exit 1
+            fi
+            ;;
         -c|--clean-device) CLEAN_DEVICE=true; shift ;;
         -C|--clean-out) CLEAN_OUT=true; shift ;;
         -h|--help) show_help; safe_exit 0 ;;
@@ -305,6 +320,12 @@ echo -e "${CLR_CYAN}╰───────────────────
 BUILD_START_TIME=$(date +%s)
 
 # Запускаем компиляцию с парсингом прогресса Ninja на лету
+# Второй гейт SukiSU-менеджера (первый — ksu в имени каталога ядра,
+# см. device/google/zuma/sukisu/sukisu.mk): виден make как env-переменная.
+if [ "$WITH_MANAGER" = true ]; then
+    export WITH_SUKISU_MANAGER=true
+    echo -e "${CLR_GREEN}--> SukiSU manager: ВКЛ (WITH_SUKISU_MANAGER=true)${CLR_RESET}"
+fi
 # m nothing -j4 && m "$TARGET_CMD" $JOBS
 m "$TARGET_CMD" $JOBS
 
@@ -527,6 +548,233 @@ PYEOF
         echo -e "${CLR_YELLOW}⚠ Updater JSON не найден ($JSON_OUT), пропуск.${CLR_RESET}"
     fi
     rm -f "$PARTS_MANIFEST"
+fi
+
+# ============================================================
+# 9. GitHub-релиз (-R): пуш сплитов + OTA/{device}.json + архив
+# ============================================================
+# - Тег релиза: {ИМЯ_ФАЙЛА_БЕЗ_ZIP}-{HHMMSS}-{TAG}, где TAG из -T/--tag
+#   (без -T наследуется текущий response[0].tag из OTA JSON).
+# - Заливает сплит-части (*.part*) + sha256sum в leegarchat/device_google_build.
+# - Клонирует response[0], обновляет поля/ссылки, вставляет новым [0].
+# - Копирует сплиты + 8 img + full.zip + response.json
+#   в build/OTA/files/{device}/{ТЕГ_РЕЛИЗА}/.
+# - Ключ: device/google/build/OTA/github_key.json (в gitignore).
+if [ "$DO_GH_RELEASE" = true ]; then
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    REPO_ROOT="$(cd "$SCRIPT_DIR/../../../.." && pwd)"
+    OTA_JSON="$REPO_ROOT/device/google/build/OTA/${DEVICE_CODE}.json"
+    OUT_DEV_DIR="out/target/product/$DEVICE_CODE"
+    ZIP_FOR_SPLIT=$(ls -t "$OUT_DEV_DIR"/*.zip 2>/dev/null | grep -v '\.part' | head -n 1)
+    if [ -z "$ZIP_FOR_SPLIT" ]; then
+        echo -e "${CLR_RED}❌ Ошибка: Готовый ZIP не найден в $OUT_DEV_DIR!${CLR_RESET}"
+        if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then return 1; else exit 1; fi
+    fi
+    ZIP_NAME=$(basename "$ZIP_FOR_SPLIT")
+    ZIP_BASE="${ZIP_NAME%.zip}"
+    TIME_HMS=$(date +%H%M%S)
+    GH_KEY_FILE="$REPO_ROOT/device/google/build/OTA/github_key.json"
+    GH_REPO="leegarchat/device_google_build"
+
+    echo -e "${CLR_CYAN}=== GITHUB-RELEASE: $ZIP_BASE ===${CLR_RESET}"
+    GH_OUT=$(python3 - "$OTA_JSON" "$ZIP_FOR_SPLIT" "$TIME_HMS" "$GH_KEY_FILE" "$GH_REPO" "$BUILD_TAG" <<'PYEOF'
+import hashlib, json, os, sys, urllib.request, urllib.error
+
+ota_json, zip_path, time_hms, key_file, repo, cli_tag = sys.argv[1:7]
+api = 'https://api.github.com'
+uploads = 'https://uploads.github.com'
+
+def die(msg):
+    print('FATAL: ' + msg, file=sys.stderr)
+    sys.exit(1)
+
+# --- ключ ---
+try:
+    with open(key_file, 'r', encoding='utf-8') as f:
+        key_data = json.load(f)
+    token = key_data.get('key', '')
+except Exception as e:
+    die('не читается %s: %s' % (key_file, e))
+if not token:
+    die('пустой key в %s' % key_file)
+if key_data.get('to_date'):
+    print('NOTE: to_date=%s (проверь срок действия токена)' % key_data['to_date'])
+
+def req(method, url, data=None, ctype='application/json'):
+    r = urllib.request.Request(url, method=method,
+        headers={'Authorization': 'Bearer ' + token,
+                 'Accept': 'application/vnd.github+json',
+                 'X-GitHub-Api-Version': '2022-11-28',
+                 'Content-Type': ctype})
+    try:
+        with urllib.request.urlopen(r, data=data) as resp:
+            return resp.status, json.loads(resp.read().decode('utf-8'))
+    except urllib.error.HTTPError as e:
+        try:
+            body = json.loads(e.read().decode('utf-8'))
+        except Exception:
+            body = {}
+        return e.code, body
+
+# --- OTA JSON: шаблон = response[0] ---
+try:
+    with open(ota_json, 'r', encoding='utf-8') as f:
+        odata = json.load(f)
+except Exception as e:
+    die('не читается %s: %s' % (ota_json, e))
+resp_list = odata.get('response', [])
+if not resp_list:
+    die('пустой response в %s' % ota_json)
+tpl = dict(resp_list[0])
+tagval = cli_tag if cli_tag else tpl.get('tag', 'GApps')
+teg_rel = '%s-%s-%s' % (os.path.basename(zip_path)[:-4], time_hms, tagval)
+
+# --- ассеты: сплиты + sha256sum рядом ---
+def file_hashes(p, algos=('md5', 'sha256')):
+    h = {a: hashlib.new(a) for a in algos}
+    with open(p, 'rb') as f:
+        for chunk in iter(lambda: f.read(128 * 1024 * 1024), b''):
+            for x in h.values():
+                x.update(chunk)
+    return {a: x.hexdigest() for a, x in h.items()}
+
+d = os.path.dirname(zip_path)
+base = os.path.basename(zip_path)
+assets = sorted([os.path.join(d, f) for f in os.listdir(d)
+                 if f.startswith(base + '.part')]) if os.path.isdir(d) else []
+for extra in (zip_path + '.sha256sum',):
+    if os.path.isfile(extra):
+        assets.append(extra)
+if not assets:
+    # целый zip, если нарезки не было
+    assets = [zip_path]
+part_names = [os.path.basename(a) for a in assets if '.part' in os.path.basename(a)]
+fh = file_hashes(zip_path)
+part_sums = {}
+for a in assets:
+    if '.part' in os.path.basename(a):
+        part_sums[os.path.basename(a)] = (
+            os.path.getsize(a), file_hashes(a, ('sha256',))['sha256'])
+
+# --- тело релиза: короткая инструкция по склейке + чексуммы ---
+_win_copy = '+'.join(part_names) if part_names else base
+_body = []
+_body.append('### Split ZIP: download ALL *.part* files, join in numeric order')
+_body.append('  Linux/macOS: `cat *.zip.part* > %s`' % base)
+_body.append('  Windows CMD: `copy /b %s %s`' % (_win_copy, base))
+_body.append('Verify: `sha256sum %s` must match the full sha256 below.' % base)
+_body.append('')
+_body.append('### Сборка сплита: скачайте ВСЕ части в одну папку, склейте по порядку')
+_body.append('  Linux/macOS: `cat *.zip.part* > %s`' % base)
+_body.append('  Windows: `copy /b %s %s`' % (_win_copy, base))
+_body.append('Проверьте sha256 склеенного файла. Не сошёлся — перекачайте часть, не шейте.')
+_body.append('')
+_body.append('### SHA256SUMS')
+_body.append('%s  %s' % (fh['sha256'], base))
+for pn in part_names:
+    _sz, _sh = part_sums[pn]
+    _body.append('%s  %s' % (_sh, pn))
+_body.append('')
+_body.append('Changelog: %s' % tpl.get('changelog_url', ''))
+BODY = '\n'.join(_body)
+
+# --- релиз: найти по тегу или создать ---
+status, rel = req('GET', '%s/repos/%s/releases/tags/%s' % (api, repo, teg_rel))
+if status == 200:
+    print('NOTE: релиз %s уже существует, доливаю ассеты в него' % teg_rel)
+    rel_id, up_url = rel['id'], rel['upload_url'].split('{')[0]
+elif status == 404:
+    status, rel = req('POST', '%s/repos/%s/releases' % (api, repo),
+        json.dumps({'tag_name': teg_rel, 'name': teg_rel,
+            'body': BODY, 'draft': False, 'prerelease': True}).encode('utf-8'))
+    if status != 201:
+        die('не создался релиз: %s %s' % (status, rel))
+    rel_id, up_url = rel['id'], rel['upload_url'].split('{')[0]
+    print('OK: создан релиз %s (id %s)' % (teg_rel, rel_id))
+else:
+    die('GitHub API: %s %s' % (status, rel))
+
+# --- заливка ассетов (хеши уже посчитаны выше) ---
+for a in assets:
+    aname = os.path.basename(a)
+    with open(a, 'rb') as f:
+        blob = f.read()
+    st, out = req('POST', '%s?name=%s' % (up_url, aname), blob,
+                  'application/octet-stream')
+    if st not in (200, 201):
+        print('WARN: %s -> %s %s' % (aname, st, out.get('message', out)))
+        die('заливка %s не удалась' % aname)
+    print('OK: залит %s (%d Б)' % (aname, len(blob)))
+
+# --- новый response[0] ---
+new = dict(tpl)
+new['id'] = os.path.basename(zip_path)[:-4]
+new['filename'] = base
+import time as _t
+new['timestamp'] = int(_t.time())
+new['md5'] = fh['md5']
+new['sha256'] = fh['sha256']
+new['size'] = os.path.getsize(zip_path)
+new['tag'] = tagval
+parts = []
+for a in assets:
+    if '.part' not in os.path.basename(a):
+        continue
+    aname = os.path.basename(a)
+    _sz, _sh = part_sums[aname]
+    parts.append({'name': aname,
+        'url': 'https://github.com/%s/releases/download/%s/%s' % (
+            repo, teg_rel, aname),
+        'size': _sz, 'sha256': _sh})
+new['parts'] = parts
+if parts:
+    new['download'] = parts[0]['url']
+else:
+    new['download'] = 'https://github.com/%s/releases/download/%s/%s' % (
+        repo, teg_rel, base)
+odata['response'] = [new] + resp_list
+with open(ota_json, 'w', encoding='utf-8') as f:
+    json.dump(odata, f, indent=2, ensure_ascii=False)
+print('OK: %s обновлён, новый [0] id=%s' % (ota_json, new['id']))
+
+# --- наружу: переменные для bash ---
+print('TEG_REL=%s' % teg_rel)
+print('TAGVAL=%s' % tagval)
+PYEOF
+)
+    PY_RC=$?
+    echo "$GH_OUT" | grep -vE '^(TEG_REL|TAGVAL)=' || true
+    if [ "$PY_RC" -ne 0 ]; then
+        echo -e "${CLR_RED}❌ GitHub-релиз не удался.${CLR_RESET}"
+        if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then return 1; else exit 1; fi
+    fi
+    eval "$(echo "$GH_OUT" | grep -E '^(TEG_REL|TAGVAL)=')"
+    if [ -z "$TEG_REL" ]; then
+        echo -e "${CLR_RED}❌ Не получен тег релиза.${CLR_RESET}"
+        if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then return 1; else exit 1; fi
+    fi
+
+    # --- архивная копия: сплиты + 8 img + full.zip + response.json ---
+    FILES_DST="device/google/build/OTA/files/$DEVICE_CODE/$TEG_REL"
+    mkdir -p "$FILES_DST"
+    for part in "${ZIP_FOR_SPLIT}".part*; do
+        [ -f "$part" ] && cp "$part" "$FILES_DST/"
+    done
+    for img in boot.img dtbo.img init_boot.img vendor_boot.img vendor_kernel_boot.img vbmeta.img vbmeta_system.img vbmeta_vendor.img; do
+        [ -f "$OUT_DEV_DIR/$img" ] && cp "$OUT_DEV_DIR/$img" "$FILES_DST/"
+    done
+    cp "$ZIP_FOR_SPLIT" "$FILES_DST/"
+    python3 - "$OTA_JSON" "$FILES_DST/response.json" <<'PYEOF'
+import json, sys
+src, dst = sys.argv[1], sys.argv[2]
+with open(src, 'r', encoding='utf-8') as f:
+    data = json.load(f)
+with open(dst, 'w', encoding='utf-8') as f:
+    json.dump(data['response'][0], f, indent=2, ensure_ascii=False)
+print('OK: response.json сохранён')
+PYEOF
+    echo -e "${CLR_GREEN}✓ Архивная копия: $FILES_DST ($(ls "$FILES_DST" | wc -l) файлов)${CLR_RESET}"
+    echo -e "${CLR_GREEN}✓ GitHub-релиз $TEG_REL готов!${CLR_RESET}\n"
 fi
 
 # Корректный выход: return для source, exit для прямого запуска
