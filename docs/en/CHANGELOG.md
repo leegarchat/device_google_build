@@ -5,6 +5,15 @@
 > One section per build, newest on top. A new build = new section here,
 > old ones stay untouched.
 
+## 12.4 — 27/11/2026
+
+- **ROM**: synced with the latest sources
+- **BakaSU**: auto-install script for the Manager removed
+- **Stock images**: the GDrive base image now ships without root
+- **OTA now comes in 4 kernel flavors** (kernel 6.1.162 everywhere):
+  Blu Spark with KSU Next (tag `Blu Spark Next`), WildKSU with Baka /
+  NEXT ksu (tags `WildKSU NEXT` and `WildKSU Baka`), and Stock Non-root
+
 ## 12.4 — 22/11/2026
 
 - **BakaSU manager updated to 35262** ([download](https://nightly.link/Baka-SU/BakaSU/workflows/build-manager/main))

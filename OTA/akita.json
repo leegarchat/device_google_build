@@ -69,36 +69,213 @@
       ],
       "maintainer": "LeeGarChat",
       "banner": "https://github.com/leegarchat/device_google_build/blob/lineage-24.0-leegar-evox/pics/evox_22.11.png?raw=true",
-      "tag": "GApps",
-      "id": "EvolutionX-17.0-20261122-akita-12.4-Unofficial",
+      "tag": "WildKSU Next",
+      "id": "EvolutionX-17.0-20261127-akita-12.4-Unofficial",
       "buildtype": "user",
       "version": "EvolutionX 12.4",
-      "filename": "EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip",
-      "timestamp": 1795325244,
-      "md5": "00a4544aeb65ebf41ed0b77d85e0d78a",
-      "sha256": "c9e8a9158277f9c5525988709343c37f4984630929c6933822f1c527e7c7c06f",
-      "size": 3453481888,
+      "filename": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip",
+      "timestamp": 1795734437,
+      "md5": "d021c60c36d8879b9d54022b9fd5e1b7",
+      "sha256": "b4a9fd157fa01da13d463961669a1700ca0ec48f9136973dcd70305c0cfaa491",
+      "size": 3200189093,
       "os_sdk_level": 37,
       "os_patch_level": "2026-11-01",
-      "download": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part00",
+      "download": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-020446-WildKSU_Next/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part00",
       "parts": [
         {
-          "name": "EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part00",
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part00",
+          "name": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part00",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-020446-WildKSU_Next/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part00",
           "size": 1288490188,
-          "sha256": "d963cd8d046efcbe1c58eb26d71e28f3d0b25b78589b3c0f0b99856294d7390c"
+          "sha256": "b08b07aafae0c5b6e980743bc7d5475133d7bea80d68f4fc34e909694177ba73"
         },
         {
-          "name": "EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part01",
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part01",
+          "name": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part01",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-020446-WildKSU_Next/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part01",
           "size": 1288490188,
-          "sha256": "b421533c870927a4408da32d4d84c5084f18aa5fdb318dd27bf7154931bb43bc"
+          "sha256": "2a74ef6817861f53737a042c6253c039ef918515c831adbb0b2d509f95a53149"
         },
         {
-          "name": "EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part02",
-          "url": "https://github.com/leegarchat/device_google_build/releases/download/OTA_20261122/EvolutionX-17.0-20261122-akita-12.4-Unofficial.zip.part02",
-          "size": 876501512,
-          "sha256": "a405fc297c56692ea39f69d52534ef6e715c41eae1d73846018295ed676d9256"
+          "name": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part02",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-020446-WildKSU_Next/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part02",
+          "size": 623208717,
+          "sha256": "ebb85e638a42362d0f80051b75921a5a713df68c3fb871cbe07bc0578afd31b8"
+        }
+      ]
+    },
+    {
+      "changelog_url": "https://github.com/leegarchat/device_google_build/raw/refs/heads/lineage-24.0-leegar-evox/docs/en/CHANGELOG.md",
+      "links": [
+        {
+          "title": "Source zuma",
+          "url": "https://github.com/leegarchat/android_device_google_zuma/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Source shusky",
+          "url": "https://github.com/leegarchat/android_device_google_akita/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Source shiba",
+          "url": "https://github.com/leegarchat/proprietary_vendor_google_akita/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Mirror GDrive",
+          "url": "https://drive.google.com/drive/folders/1E-8YBzicBkoNegPhUj2szhTrL81-OnPD?usp=drive_link",
+          "icon": "mirror"
+        }
+      ],
+      "maintainer": "LeeGarChat",
+      "banner": "https://github.com/leegarchat/device_google_build/blob/lineage-24.0-leegar-evox/pics/evox_22.11.png?raw=true",
+      "tag": "WildKSU Baka",
+      "id": "EvolutionX-17.0-20261127-akita-12.4-Unofficial",
+      "buildtype": "user",
+      "version": "EvolutionX 12.4",
+      "filename": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip",
+      "timestamp": 1795732958,
+      "md5": "28e65f628b94373b734188cf10bf75dc",
+      "sha256": "8e4fa46fa6e20307d539c5b46c24247bfbedb955c7edc15b7c86d033df7050e5",
+      "size": 3200185842,
+      "os_sdk_level": 37,
+      "os_patch_level": "2026-11-01",
+      "download": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-014000-WildKSU_Baka/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part00",
+      "parts": [
+        {
+          "name": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part00",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-014000-WildKSU_Baka/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part00",
+          "size": 1288490188,
+          "sha256": "888f13ac40b9a735277a12ad542ae95ab867e8d0fe18473945935c247b8a116f"
+        },
+        {
+          "name": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part01",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-014000-WildKSU_Baka/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part01",
+          "size": 1288490188,
+          "sha256": "606a9e33ceb6a495aceac7de49fe6733266e619e6db7edc5d133cf81fa1214fa"
+        },
+        {
+          "name": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part02",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-014000-WildKSU_Baka/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part02",
+          "size": 623205466,
+          "sha256": "f31238d23f0d254b7efd40c453fdc84a0a6c2b439ab5ad3040242228076567dd"
+        }
+      ]
+    },
+    {
+      "changelog_url": "https://github.com/leegarchat/device_google_build/raw/refs/heads/lineage-24.0-leegar-evox/docs/en/CHANGELOG.md",
+      "links": [
+        {
+          "title": "Source zuma",
+          "url": "https://github.com/leegarchat/android_device_google_zuma/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Source shusky",
+          "url": "https://github.com/leegarchat/android_device_google_akita/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Source shiba",
+          "url": "https://github.com/leegarchat/proprietary_vendor_google_akita/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Mirror GDrive",
+          "url": "https://drive.google.com/drive/folders/1E-8YBzicBkoNegPhUj2szhTrL81-OnPD?usp=drive_link",
+          "icon": "mirror"
+        }
+      ],
+      "maintainer": "LeeGarChat",
+      "banner": "https://github.com/leegarchat/device_google_build/blob/lineage-24.0-leegar-evox/pics/evox_22.11.png?raw=true",
+      "tag": "Blu Spark Next",
+      "id": "EvolutionX-17.0-20261127-akita-12.4-Unofficial",
+      "buildtype": "user",
+      "version": "EvolutionX 12.4",
+      "filename": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip",
+      "timestamp": 1795731428,
+      "md5": "1d39fab21fea225b599f6984acc863ab",
+      "sha256": "00c53500a539a0ab7fed9dcb2baf169e6a57dbf69e080cedbd5fdd166c5cf4c2",
+      "size": 3200631235,
+      "os_sdk_level": 37,
+      "os_patch_level": "2026-11-01",
+      "download": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-011300-Blu_Spark_Next/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part00",
+      "parts": [
+        {
+          "name": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part00",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-011300-Blu_Spark_Next/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part00",
+          "size": 1288490188,
+          "sha256": "f0a24c790c7f86f47f209763445d35bd494bfbe22fb78aa7363c24b6a2583346"
+        },
+        {
+          "name": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part01",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-011300-Blu_Spark_Next/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part01",
+          "size": 1288490188,
+          "sha256": "6b8f80edcfa901e88c5bec656d411c979f37b1f999619a0c2ec813babbe3555a"
+        },
+        {
+          "name": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part02",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-011300-Blu_Spark_Next/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part02",
+          "size": 623650859,
+          "sha256": "eee2070345e7eb66e3201ebefb67c01519d7ccae8a5d7132322f89e25e7da601"
+        }
+      ]
+    },
+    {
+      "changelog_url": "https://github.com/leegarchat/device_google_build/raw/refs/heads/lineage-24.0-leegar-evox/docs/en/CHANGELOG.md",
+      "links": [
+        {
+          "title": "Source zuma",
+          "url": "https://github.com/leegarchat/android_device_google_zuma/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Source shusky",
+          "url": "https://github.com/leegarchat/android_device_google_akita/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Source shiba",
+          "url": "https://github.com/leegarchat/proprietary_vendor_google_akita/tree/lineage-24.0-leegar-evox-cp3a",
+          "icon": "github"
+        },
+        {
+          "title": "Mirror GDrive",
+          "url": "https://drive.google.com/drive/folders/1E-8YBzicBkoNegPhUj2szhTrL81-OnPD?usp=drive_link",
+          "icon": "mirror"
+        }
+      ],
+      "maintainer": "LeeGarChat",
+      "banner": "https://github.com/leegarchat/device_google_build/blob/lineage-24.0-leegar-evox/pics/evox_22.11.png?raw=true",
+      "tag": "Stock Non-Root",
+      "id": "EvolutionX-17.0-20261127-akita-12.4-Unofficial",
+      "buildtype": "user",
+      "version": "EvolutionX 12.4",
+      "filename": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip",
+      "timestamp": 1795729756,
+      "md5": "1f5bf4e2d31097ed6a06074d41ffce8b",
+      "sha256": "87d9c6599facf224c1c7819cdcd7ea0de381a1f0c8378d625c0f108cf23ac615",
+      "size": 3199420941,
+      "os_sdk_level": 37,
+      "os_patch_level": "2026-11-01",
+      "download": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-004233-Stock_Non-Root/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part00",
+      "parts": [
+        {
+          "name": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part00",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-004233-Stock_Non-Root/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part00",
+          "size": 1288490188,
+          "sha256": "98c035327f117d20a7f45abd9fd53ab31444432aa0372de05aaa7e405a57d93d"
+        },
+        {
+          "name": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part01",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-004233-Stock_Non-Root/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part01",
+          "size": 1288490188,
+          "sha256": "d88a3b9bf0f084edd2db46a7c19afec8b1840a9c7d0d4787b0203d77d16c3dab"
+        },
+        {
+          "name": "EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part02",
+          "url": "https://github.com/leegarchat/device_google_build/releases/download/EvolutionX-17.0-20261127-akita-12.4-Unofficial-004233-Stock_Non-Root/EvolutionX-17.0-20261127-akita-12.4-Unofficial.zip.part02",
+          "size": 622440565,
+          "sha256": "8c3b8d86c697a577fd83661d2ebd6c25fc6df11889a9db63f9343e1d93a37262"
         }
       ]
     }
